@@ -239,8 +239,8 @@
               <svg viewBox="0 0 480 330" role="presentation">
                 <defs>
                   <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stop-color="#2B4457"/>
-                    <stop offset="1" stop-color="#132330"/>
+                    <stop offset="0" class="stop-glass-top"/>
+                    <stop offset="1" class="stop-glass-bottom"/>
                   </linearGradient>
                   <linearGradient id="glare" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0" stop-color="#fff" stop-opacity="0"/>
@@ -248,22 +248,22 @@
                     <stop offset="1" stop-color="#fff" stop-opacity="0"/>
                   </linearGradient>
                 </defs>
-                <path d="M70 40 Q240 18 410 40 L462 300 Q240 318 18 300 Z" fill="url(#glass)" stroke="#0A141C" stroke-width="10" stroke-linejoin="round"/>
+                <path class="s-deep" d="M70 40 Q240 18 410 40 L462 300 Q240 318 18 300 Z" fill="url(#glass)" stroke-width="10" stroke-linejoin="round"/>
                 <path d="M120 60 L250 50 L150 290 L40 290 Z" fill="url(#glare)"/>
-                <rect x="226" y="36" width="28" height="22" rx="4" fill="#0A141C"/>
-                <rect x="186" y="56" width="108" height="34" rx="12" fill="#0E1A24" stroke="#24394A" stroke-width="2"/>
+                <rect class="c-deep" x="226" y="36" width="28" height="22" rx="4"/>
+                <rect class="c-ink s-ink-3" x="186" y="56" width="108" height="34" rx="12" stroke-width="2"/>
                 <g class="tag">
-                  <rect x="318" y="58" width="74" height="40" rx="7" fill="#F3F1EC"/>
-                  <rect x="324" y="64" width="24" height="28" rx="3" fill="#FFC72C"/>
-                  <text x="336" y="83" text-anchor="middle" font-size="13" font-weight="800" fill="#0C1720" font-family="Archivo, sans-serif">66</text>
-                  <path d="M356 70h28M356 78h22M356 86h26" stroke="#9AA4AC" stroke-width="3" stroke-linecap="round"/>
+                  <rect class="c-paper" x="318" y="58" width="74" height="40" rx="7"/>
+                  <rect class="c-accent" x="324" y="64" width="24" height="28" rx="3"/>
+                  <text class="c-on-accent" x="336" y="83" text-anchor="middle" font-size="13" font-weight="800" font-family="Archivo, sans-serif">66</text>
+                  <path class="s-muted" d="M356 70h28M356 78h22M356 86h26" stroke-width="3" stroke-linecap="round"/>
                 </g>
-                <g class="waves" fill="none" stroke="#FFC72C" stroke-width="4" stroke-linecap="round">
+                <g class="waves s-accent" fill="none" stroke-width="4" stroke-linecap="round">
                   <path class="w1" d="M412 50 a28 28 0 0 1 0 56"/>
                   <path class="w2" d="M424 38 a44 44 0 0 1 0 80"/>
                   <path class="w3" d="M436 26 a60 60 0 0 1 0 104"/>
                 </g>
-                <path d="M60 300 Q240 280 420 300" stroke="#0A141C" stroke-width="6" fill="none" opacity=".5"/>
+                <path class="s-deep" d="M60 300 Q240 280 420 300" stroke-width="6" fill="none" opacity=".5"/>
               </svg>
               <p class="windshield-cap"><span>Your tag</span> Goes on once, stays on. The scanner reads it every time you pull in.</p>
             </div>
@@ -376,27 +376,27 @@
 
         <figure class="underbody" aria-labelledby="underbody-cap">
           <svg viewBox="0 0 640 300" role="img" aria-label="Side view of a car showing where salt collects: brake and fuel lines, rocker panels, wheel wells and exhaust">
-            <g fill="none" stroke="#0C1720" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
-              <path d="M44 196 L44 166 Q46 150 70 146 L168 132 Q196 96 236 78 Q262 68 300 68 L392 68 Q430 70 458 100 L494 132 Q560 138 590 152 Q600 160 600 196 L540 196 A50 50 0 0 0 440 196 L210 196 A50 50 0 0 0 110 196 Z" fill="#F7FBFD"/>
+            <g class="s-ink" fill="none" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+              <path d="M44 196 L44 166 Q46 150 70 146 L168 132 Q196 96 236 78 Q262 68 300 68 L392 68 Q430 70 458 100 L494 132 Q560 138 590 152 Q600 160 600 196 L540 196 A50 50 0 0 0 440 196 L210 196 A50 50 0 0 0 110 196 Z" class="c-white"/>
               <path d="M188 134 Q214 100 244 88 L300 82 L300 134 Z"/>
               <path d="M316 82 L388 82 Q418 86 440 112 L452 134 L316 134 Z"/>
               <path d="M308 140 L308 192"/>
-              <circle cx="160" cy="200" r="40" fill="#0C1720"/>
-              <circle cx="160" cy="200" r="17" fill="#C9D3DA" stroke="none"/>
-              <circle cx="490" cy="200" r="40" fill="#0C1720"/>
-              <circle cx="490" cy="200" r="17" fill="#C9D3DA" stroke="none"/>
+              <circle class="c-ink" cx="160" cy="200" r="40"/>
+              <circle class="c-muted" cx="160" cy="200" r="17" stroke="none"/>
+              <circle class="c-ink" cx="490" cy="200" r="40"/>
+              <circle class="c-muted" cx="490" cy="200" r="17" stroke="none"/>
               <path d="M214 206 L436 206" stroke-dasharray="2 8" stroke-width="4"/>
               <path d="M548 206 L612 210" stroke-width="5"/>
             </g>
-            <g class="salt" fill="#0C1720" opacity=".28">
+            <g class="salt c-ink" opacity=".28">
               <circle cx="120" cy="252" r="2.2"/><circle cx="148" cy="262" r="1.6"/><circle cx="182" cy="256" r="2.4"/><circle cx="210" cy="266" r="1.4"/><circle cx="246" cy="254" r="2"/><circle cx="282" cy="262" r="1.8"/><circle cx="318" cy="252" r="2.4"/><circle cx="350" cy="264" r="1.5"/><circle cx="386" cy="256" r="2.1"/><circle cx="420" cy="266" r="1.7"/><circle cx="452" cy="254" r="2.3"/><circle cx="486" cy="262" r="1.5"/><circle cx="520" cy="256" r="2"/><circle cx="556" cy="266" r="1.8"/><circle cx="96" cy="262" r="1.5"/><circle cx="584" cy="254" r="1.6"/>
             </g>
-            <path d="M40 244 L612 244" stroke="#0C1720" stroke-width="2" opacity=".35"/>
+            <path class="s-ink" d="M40 244 L612 244" stroke-width="2" opacity=".35"/>
             <g class="spots">
-              <g transform="translate(330 206)"><circle r="15" fill="#FFC72C" stroke="#0C1720" stroke-width="2.5"/><text y="5" text-anchor="middle" font-size="15" font-weight="800" font-family="Archivo, sans-serif" fill="#0C1720">1</text></g>
-              <g transform="translate(262 188)"><circle r="15" fill="#FFC72C" stroke="#0C1720" stroke-width="2.5"/><text y="5" text-anchor="middle" font-size="15" font-weight="800" font-family="Archivo, sans-serif" fill="#0C1720">2</text></g>
-              <g transform="translate(490 146)"><circle r="15" fill="#FFC72C" stroke="#0C1720" stroke-width="2.5"/><text y="5" text-anchor="middle" font-size="15" font-weight="800" font-family="Archivo, sans-serif" fill="#0C1720">3</text></g>
-              <g transform="translate(590 222)"><circle r="15" fill="#FFC72C" stroke="#0C1720" stroke-width="2.5"/><text y="5" text-anchor="middle" font-size="15" font-weight="800" font-family="Archivo, sans-serif" fill="#0C1720">4</text></g>
+              <g transform="translate(330 206)"><circle class="c-accent s-ink" r="15" stroke-width="2.5"/><text class="c-on-accent" y="5" text-anchor="middle" font-size="15" font-weight="800" font-family="Archivo, sans-serif">1</text></g>
+              <g transform="translate(262 188)"><circle class="c-accent s-ink" r="15" stroke-width="2.5"/><text class="c-on-accent" y="5" text-anchor="middle" font-size="15" font-weight="800" font-family="Archivo, sans-serif">2</text></g>
+              <g transform="translate(490 146)"><circle class="c-accent s-ink" r="15" stroke-width="2.5"/><text class="c-on-accent" y="5" text-anchor="middle" font-size="15" font-weight="800" font-family="Archivo, sans-serif">3</text></g>
+              <g transform="translate(590 222)"><circle class="c-accent s-ink" r="15" stroke-width="2.5"/><text class="c-on-accent" y="5" text-anchor="middle" font-size="15" font-weight="800" font-family="Archivo, sans-serif">4</text></g>
             </g>
           </svg>
           <figcaption id="underbody-cap">

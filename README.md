@@ -41,9 +41,37 @@ Plain HTML, CSS and a small JavaScript file. No build step, no framework. Upload
 
 6. **Google review link.** The "Leave us a Google review" link opens a Maps search. For a direct link, get the review link from the Google Business Profile (Ask for reviews > copy link) and paste it in place of both `google.com/maps/search` links in the reviews section.
 
-7. **Logo.** The header uses a text logo (WASH + a yellow 66 badge). To use the real logo, replace the `<a class="brand">` contents in each page with an `<img>`.
+7. **Logo and brand colours.** The current colours and text logo are stand-ins. See "Brand colours and logo" below.
 
 8. **Disclaimers.** `disclaimers/index.html` was rebuilt from the wording on the current site. Read it over against the live page once before switching.
+
+## Brand colours and logo
+
+**Colours.** Open `assets/css/styles.css`. At the very top, under `:root`, are five lines:
+
+```css
+--brand-dark: #0C1720;       /* dark sections, text, outlines */
+--brand-accent: #FFC72C;     /* main buttons, badges, highlights, prices */
+--brand-on-accent: #0C1720;  /* text that sits on the accent colour */
+--brand-secondary: #3A7EA3;  /* winter section and water accents */
+--brand-light: #F3F1EC;      /* page background */
+```
+
+Put the brand's hex codes there and the whole site follows: buttons, cards, illustrations, checkmarks, the windshield graphic, everything. If the accent colour is dark (a deep red or blue), set `--brand-on-accent` to `#FFFFFF` so text on it stays readable.
+
+Three small things don't read the CSS and need a manual touch:
+
+- `<meta name="theme-color" content="#0C1720">` in `index.html` and `disclaimers/index.html` (tints the phone browser bar). Use the `--brand-dark` value.
+- `assets/img/favicon.svg` (browser tab icon). Two colours in the file: the background and the badge.
+- The link preview image and home screen icon. Regenerate them with `node tools/render-share-images.mjs` (instructions at the top of that file).
+
+**Logo.** The header and footer use a text logo (WASH plus a 66 badge). To use the real logo file, save it as `assets/img/logo.svg` (or `.png`) and replace the inside of each `<a class="brand">` with:
+
+```html
+<img src="assets/img/logo.svg" alt="Wash 66" height="36">
+```
+
+On the disclaimers page the path is `../assets/img/logo.svg`. For the footer (dark background), use a light or white version of the logo if there is one.
 
 ## Editing other things
 
