@@ -41,44 +41,44 @@ Plain HTML, CSS and a small JavaScript file. No build step, no framework. Upload
 
 6. **Google review link.** The "Leave us a Google review" link opens a Maps search. For a direct link, get the review link from the Google Business Profile (Ask for reviews > copy link) and paste it in place of both `google.com/maps/search` links in the reviews section.
 
-7. **Logo and brand colours.** The current colours and text logo are stand-ins. See "Brand colours and logo" below.
+7. **Logo.** The logo was traced from the 128 x 144 px file on the current site. If you have the original artwork (SVG, AI, EPS or a big PNG), swap it in for a perfect match. See "Brand colours and logo" below.
 
 8. **Disclaimers.** `disclaimers/index.html` was rebuilt from the wording on the current site. Read it over against the live page once before switching.
 
 ## Brand colours and logo
 
-**Colours.** Open `assets/css/styles.css`. At the very top, under `:root`, are five lines:
+**Colours.** Taken from the logo and the current wash66.com. They live at the very top of `assets/css/styles.css`, under `:root`:
 
 ```css
---brand-dark: #0C1720;       /* dark sections, text, outlines */
---brand-accent: #FFC72C;     /* main buttons, badges, highlights, prices */
---brand-on-accent: #0C1720;  /* text that sits on the accent colour */
---brand-secondary: #3A7EA3;  /* winter section and water accents */
---brand-light: #F3F1EC;      /* page background */
+--brand-dark: #193A62;          /* Wash 66 navy: header, dark sections, text */
+--brand-accent: #2D67B6;        /* royal blue: main buttons, badges, links */
+--brand-on-accent: #FFFFFF;     /* text that sits on the accent colour */
+--brand-accent-light: #8CC0F5;  /* lighter blue for highlights on navy backgrounds */
+--brand-secondary: #3C6089;     /* steel blue: winter section and water accents */
+--brand-light: #F4F7FB;         /* page background */
 ```
 
-Put the brand's hex codes there and the whole site follows: buttons, cards, illustrations, checkmarks, the windshield graphic, everything. If the accent colour is dark (a deep red or blue), set `--brand-on-accent` to `#FFFFFF` so text on it stays readable.
+Change a value there and the whole site follows: buttons, cards, illustrations, checkmarks, the windshield graphic, everything.
 
-Three small things don't read the CSS and need a manual touch:
+A few things don't read the CSS and need a manual touch if the colours change:
 
-- `<meta name="theme-color" content="#0C1720">` in `index.html` and `disclaimers/index.html` (tints the phone browser bar). Use the `--brand-dark` value.
-- `assets/img/favicon.svg` (browser tab icon). Two colours in the file: the background and the badge.
+- `<meta name="theme-color" content="#193A62">` in `index.html` and `disclaimers/index.html` (tints the phone browser bar).
+- The navy fill inside `assets/img/logo-badge.svg` and `assets/img/favicon.svg`.
 - The link preview image and home screen icon. Regenerate them with `node tools/render-share-images.mjs` (instructions at the top of that file).
 
-**Logo.** The header and footer use a text logo (WASH plus a 66 badge). To use the real logo file, save it as `assets/img/logo.svg` (or `.png`) and replace the inside of each `<a class="brand">` with:
+**Logo files.**
 
-```html
-<img src="assets/img/logo.svg" alt="Wash 66" height="36">
-```
+- `assets/img/logo.svg`: white logo with a see-through middle, for navy backgrounds (header, footer).
+- `assets/img/logo-badge.svg`: the same logo with the navy fill and a navy outline, so it works on any background. Also used as the browser tab icon (`favicon.svg`).
 
-On the disclaimers page the path is `../assets/img/logo.svg`. For the footer (dark background), use a light or white version of the logo if there is one.
+Both were traced from the small logo PNG on the current site. To replace them with original artwork, keep the same file names (or update the `<img src>` in the header and footer of each page).
+
+**Font.** Montserrat, the same family the current site uses, self-hosted in `assets/fonts/` (SIL Open Font License, see `OFL.txt`).
 
 ## Editing other things
 
 - **Hours** appear in three places: the Visit section in `index.html`, the JSON-LD block at the top of `index.html` (helps Google show your hours), and `assets/js/main.js` (the "Open now" badge, look for `8 * 60` and `19 * 60`).
 - **Phone and email** are plain text in the HTML. Search and replace `506-847-7627`, `+15068477627` and `info@wash66.com`.
-- **Colours** are at the top of `assets/css/styles.css` under `:root`.
-- **Font** is Archivo, self-hosted in `assets/fonts/` (SIL Open Font License, see `OFL.txt`).
 
 ## Previewing locally
 

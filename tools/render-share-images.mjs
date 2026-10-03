@@ -16,7 +16,7 @@ await card.evaluate(() => document.fonts.ready);
 await card.screenshot({ path: "assets/img/og.jpg", type: "jpeg", quality: 85 });
 
 const icon = await browser.newPage({ viewport: { width: 180, height: 180 } });
-await icon.goto(`${base}/assets/img/favicon.svg`);
+await icon.goto(`${base}/tools/icon.html`, { waitUntil: "networkidle" });
 await icon.screenshot({ path: "assets/img/apple-touch-icon.png" });
 
 await browser.close();

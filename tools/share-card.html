@@ -6,25 +6,24 @@
   <meta name="robots" content="noindex">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <style>
-    body { margin: 0; width: 1200px; height: 630px; background: var(--ink); color: var(--paper); overflow: hidden; }
+    body { margin: 0; width: 1200px; height: 630px; background: var(--ink); color: var(--white); overflow: hidden; }
     .og { display: grid; grid-template-columns: 1fr 520px; height: 630px; }
-    .og-l { padding: 64px 32px 56px 72px; display: flex; flex-direction: column; justify-content: space-between; }
-    .og-l h1 { font-size: 104px; font-stretch: 118%; font-weight: 850; line-height: .9; letter-spacing: -0.035em; }
+    .og-l { padding: 48px 32px 52px 72px; display: flex; flex-direction: column; justify-content: space-between; }
+    .og-l img { height: 104px; width: auto; align-self: flex-start; }
+    .og-l h1 { font-size: 80px; font-weight: 900; line-height: .95; letter-spacing: -0.03em; text-transform: uppercase; }
+    .og-l h1 span { color: var(--accent-on-dark); }
     .og-l p { margin: 0; font-size: 24px; line-height: 1.35; color: var(--muted-light); font-weight: 600; }
-    .og-l .brand-word { font-size: 34px; color: var(--white); }
-    .og-l .brand-num { font-size: 26px; height: 42px; min-width: 54px; }
     .og-r { position: relative; margin: 40px 40px 40px 0; border-radius: 28px; overflow: hidden; }
     .og-r img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 50%; }
     .og-r .b { clip-path: inset(0 50% 0 0); }
     .og-r i { position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; margin-left: -2px; background: #fff; }
-    .hl::after { bottom: .02em; }
   </style>
 </head>
 <body>
   <div class="og">
     <div class="og-l">
-      <span class="brand"><span class="brand-word">Wash</span><span class="brand-num">66</span></span>
-      <h1>Drive in.<br>Neutral.<br><span class="hl">Done.</span></h1>
+      <img src="../assets/img/logo.svg" alt="">
+      <h1>Drive in.<br>Neutral.<br><span>Done.</span></h1>
       <p>Soft-touch express wash<br>7 Pettingill Road, Quispamsis</p>
     </div>
     <div class="og-r">
