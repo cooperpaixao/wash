@@ -77,6 +77,7 @@ Both were traced from the small logo PNG on the current site. To replace them wi
 
 ## Editing other things
 
+- **Link previews point at the Cloudflare preview address for now** (`wash66.cooper-577.workers.dev`), because wash66.com still shows the old site. When wash66.com switches to this site, run `python3 tools/set-share-domain.py https://wash66.com` so previews use the real domain again.
 - **After editing `assets/css/styles.css` or `assets/js/main.js`, or regenerating the link preview image**, run `python3 tools/stamp-assets.py`. It updates the `?v=` fingerprint on every page so visitors' browsers (and apps showing link previews) load the new file instead of a cached copy.
 
 - **Hours** appear in three places: the Visit section in `index.html`, the JSON-LD block at the top of `index.html` (helps Google show your hours), and `assets/js/main.js` (the "Open now" badge, look for `8 * 60` and `19 * 60`).
