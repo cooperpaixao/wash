@@ -834,6 +834,7 @@ h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
 .windshield { margin: 0; padding: 18px 18px 16px; border-radius: var(--radius-lg); background: var(--ink-2); border: 1px solid var(--line-light); }
 .windshield svg { width: 100%; height: auto; }
 .windshield figcaption { margin-top: 12px; color: var(--muted-light); font-size: .95rem; }
+.ws-tag-zoom { display: block; width: 100%; max-width: 320px; height: auto; margin: 16px 0 4px; border-radius: 6px; box-shadow: 0 8px 18px rgba(0, 0, 0, .28); }
 .ws-glass-top { stop-color: color-mix(in srgb, var(--ink), #fff 20%); }
 .ws-glass-bottom { stop-color: var(--ink-2); }
 .ws-frame { stroke: var(--ink-deep); }
