@@ -38,10 +38,21 @@
 
 ## Membership terms
 
-- One vehicle per membership; anyone driving the tagged vehicle can use it
+- One vehicle per membership; anyone driving the tagged vehicle can use it. A second vehicle needs a second membership
 - Valid one month from the date of purchase and renews automatically
-- Cancelling needs at least 20 days' notice before the billing date; changes are made on site
+- Cancelling needs at least 20 days' notice before the billing date, or the next month may be charged; changes are made on site
 - One wash per day maximum
+- Tags stop working once peeled off; after a windshield replacement or if a tag is damaged, members get a new tag at the office at the wash
+- If a payment can't be collected, the membership is suspended after 30 days until payment details are updated
+- Refunds are requested from an attendant at the wash and paid by cash or e-transfer, or applied as membership credit; they take 5 to 7 business days
+
+## Good to know
+
+- The wash may occasionally close for bad weather or mechanical maintenance; updates are posted on Facebook
+- Clear snow and ice from the vehicle, roof included, before entering
+- Pre-spraying (for example bug spray) is a free courtesy when available, not part of any wash; attendants don't cross the track to spray the passenger side
+- Each vacuum has a trap that staff can check for lost items, but for safety they can't open the canisters
+- Prices and terms at the wash at the time of purchase apply if they differ from the website
 
 ## Pages
 
@@ -50,8 +61,8 @@
 - [Car care tips](https://wash66.com/car-care/): Practical car care advice from Wash 66 in Quispamsis: washing through a New Brunswick winter, soft-touch vs touchless washes, and whether a membership pays off.
 - [Contact us](https://wash66.com/contact/): Wash 66 is at 7 Pettingill Road, Quispamsis, NB. Open every day 8 am to 7 pm. Call 506-847-7627, email info@wash66.com or send us a message.
 - [Auto detailing](https://wash66.com/detailing/): Three auto detailing packages at Wash 66 in Quispamsis, $60 to $150: towel dry, interior vacuum, acid-cleaned rims, door jambs, spray wax and dressed tires. Book by phone or online.
-- [Disclaimers](https://wash66.com/disclaimers/): Wash 66 policies: safety in the tunnel, vehicles we can't wash, detailing, vacuums, membership packages, pricing and customer conduct.
-- [Questions](https://wash66.com/faq/): Answers about Wash 66 in Quispamsis: memberships and cancelling, how long a wash takes, vacuum prices, which vehicles fit, detailing and holiday hours.
+- [Disclaimers](https://wash66.com/disclaimers/): Wash 66 policies: safety in the tunnel, vehicles we can't wash, detailing, vacuums, membership terms and refunds, pricing, closures and customer conduct.
+- [Questions](https://wash66.com/faq/): Answers about Wash 66 in Quispamsis: memberships, cancelling and refunds, which vehicles fit, closures and holiday hours, vacuums, payment and detailing.
 - [Washes and packages](https://wash66.com/packages/): Good, Better and Best car washes at Wash 66 in Quispamsis. Pay per wash or join a monthly membership with one wash a day, plus 3-month and 6+1 prepay deals.
 - [Our services](https://wash66.com/services/): What happens inside the Wash 66 soft-touch tunnel, what each wash level includes, auto detailing, covered vacuums and fleet rates in Quispamsis, NB.
 - [Is a monthly car wash membership worth it?](https://wash66.com/car-care/is-a-car-wash-membership-worth-it/): The simple math on an unlimited car wash membership at Wash 66 in Quispamsis: when it pays for itself, who it suits, how the RFID tag works and the fine print.

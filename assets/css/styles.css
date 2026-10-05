@@ -523,6 +523,12 @@ h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
 .faq details[open] summary::after { transform: rotate(45deg); }
 .faq details p { margin: 0 0 22px; color: var(--text-2); max-width: 62ch; }
 .faq details a { font-weight: 700; color: var(--accent); }
+.faq--grouped { border-top: 0; }
+.faq-group { margin: 0; padding: 40px 0 12px; border-bottom: 2px solid var(--ink); font-size: .8rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.faq-group:first-child { padding-top: 0; }
+.faq-jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.faq-jump a { display: inline-flex; align-items: center; min-height: 42px; padding: 0 16px; border: 2px solid var(--accent); border-radius: 6px; color: var(--accent); font-weight: 700; text-decoration: none; }
+.faq-jump a:hover { background: var(--accent); color: var(--on-accent); }
 @media (min-width: 900px) {
   .faq-grid { grid-template-columns: 1fr 1.35fr; gap: 72px; }
   .faq-head { position: sticky; top: calc(var(--header-h) + 32px); align-self: start; }
