@@ -77,6 +77,8 @@ Both were traced from the small logo PNG on the current site. To replace them wi
 
 ## Editing other things
 
+- **After editing `assets/css/styles.css` or `assets/js/main.js`**, run `python3 tools/stamp-assets.py`. It updates the `?v=` fingerprint on every page so visitors' browsers load the new file instead of a cached copy.
+
 - **Hours** appear in three places: the Visit section in `index.html`, the JSON-LD block at the top of `index.html` (helps Google show your hours), and `assets/js/main.js` (the "Open now" badge, look for `8 * 60` and `19 * 60`).
 - **Phone and email** are plain text in the HTML. Search and replace `506-847-7627`, `+15068477627` and `info@wash66.com`.
 
