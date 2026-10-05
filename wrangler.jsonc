@@ -3,7 +3,7 @@
 // Cloudflare runs `npx wrangler deploy` on every push to the production branch.
 {
   "name": "wash66",
-  "compatibility_date": "2026-10-01",
+  "compatibility_date": "2026-10-04",
   "assets": {
     "directory": ".",
     // Unknown URLs get 404.html with a 404 status, like the current live site

@@ -653,7 +653,12 @@ h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
 .gift-photo { margin: 0; }
 .gift-photo img { width: 100%; height: auto; }
 .gift-copy h2 { margin-bottom: 4px; }
-.gift-points { margin: 24px 0 28px; }
+.gift-deals { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0 10px; }
+.gift-deal { margin: 0; padding: 14px 16px; border-radius: var(--radius); background: rgba(255,255,255,.07); border: 1px solid var(--line-light); }
+.gift-deal strong { display: block; font-size: clamp(1.8rem, 1.5rem + 1.2vw, 2.4rem); font-weight: 800; line-height: 1; letter-spacing: -0.03em; color: var(--accent-on-dark); }
+.gift-deal span { display: block; margin-top: 6px; font-weight: 600; color: var(--white); }
+.gift-custom { margin: 0; color: var(--muted-light); font-size: .95rem; }
+.gift-points { margin: 22px 0 28px; }
 .gift-points li { color: var(--muted-light); font-weight: 450; }
 .gift-points strong { color: var(--white); font-weight: 700; }
 .gift-points a { color: var(--white); font-weight: 600; text-underline-offset: 3px; }
