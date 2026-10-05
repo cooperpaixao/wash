@@ -31,6 +31,11 @@
 - More value can be added to the same card any time
 - Check a balance at https://www.worldgiftcard.com/cardholder.htm
 
+## Payment
+
+- All major credit cards (Visa, Mastercard, American Express), Apple Pay and cash
+- Monthly memberships are billed automatically to a credit card; cash works for everything else (single washes, prepay deals, detailing, gift cards)
+
 ## Membership terms
 
 - One vehicle per membership; anyone driving the tagged vehicle can use it

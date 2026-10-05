@@ -58,6 +58,7 @@
       "email": "info@wash66.com",
       "priceRange": "$",
       "currenciesAccepted": "CAD",
+      "paymentAccepted": "Cash, Credit Card, Visa, Mastercard, American Express, Apple Pay",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "7 Pettingill Road",
@@ -189,6 +190,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Yes. A membership belongs to the vehicle, not the person, so anyone driving the tagged vehicle can use it. A second vehicle needs its own membership or a single wash."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I pay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We take all major credit cards, including Visa, Mastercard and American Express, plus Apple Pay and cash. Cash works for everything except a monthly membership, which bills automatically to a credit card."
           }
         },
         {
@@ -341,6 +350,10 @@
   <p>Yes. A membership belongs to the vehicle, not the person, so anyone driving the tagged vehicle can use it. A second vehicle needs its own membership or a single wash.</p>
 </details>
 <details>
+  <summary>How can I pay?</summary>
+  <p>We take all major credit cards, including Visa, Mastercard and American Express, plus Apple Pay and cash. Cash works for everything except a monthly membership, which bills automatically to a credit card.</p>
+</details>
+<details>
   <summary>Do the vacuums cost extra?</summary>
   <p>No, not with a wash. Vacuums are free with any wash and with every membership. If you only want to vacuum, it&#x27;s $5.</p>
 </details>
@@ -413,6 +426,16 @@
       </nav>
     </div>
     <div class="wrap footer-bottom">
+      <div class="footer-pay">
+        <span class="footer-pay-label">We accept</span>
+        <ul class="pay-icons" aria-label="Payment methods we accept">
+          <li><img src="/assets/img/payments/visa.svg" alt="Visa" width="38" height="24" loading="lazy"></li>
+          <li><img src="/assets/img/payments/mastercard.svg" alt="Mastercard" width="38" height="24" loading="lazy"></li>
+          <li><img src="/assets/img/payments/american-express.svg" alt="American Express" width="38" height="24" loading="lazy"></li>
+          <li><img src="/assets/img/payments/apple-pay.svg" alt="Apple Pay" width="38" height="24" loading="lazy"></li>
+          <li class="pay-cash">Cash</li>
+        </ul>
+      </div>
       <p>&copy; 2026 Wash 66. Prices in Canadian dollars. Single washes include HST; memberships and detailing are plus HST.</p>
       <a href="/disclaimers/">Disclaimers</a>
     </div>
