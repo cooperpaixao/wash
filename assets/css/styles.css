@@ -598,7 +598,12 @@ h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
 .page-hero h1 { font-size: clamp(2.6rem, 1.6rem + 5vw, 5rem); font-weight: 900; letter-spacing: -0.03em; text-transform: uppercase; margin-bottom: 18px; }
 .page-hero p { color: var(--muted); font-size: 1.15rem; max-width: 56ch; margin: 0; }
 .legal { display: grid; gap: 40px; padding-top: clamp(36px, 5vw, 64px); padding-bottom: clamp(64px, 8vw, 110px); }
-.legal-toc { display: none; }
+@media (max-width: 999px) {
+  .legal-toc { display: flex; flex-wrap: wrap; gap: 8px; }
+  .legal-toc p { flex-basis: 100%; margin: 0 0 4px; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .legal-toc a { display: inline-flex; align-items: center; min-height: 42px; padding: 0 14px; border: 2px solid var(--accent); border-radius: 6px; color: var(--accent); font-weight: 700; text-decoration: none; }
+  .legal-toc a:hover { background: var(--accent); color: var(--on-accent); }
+}
 .legal-body { display: grid; gap: 20px; }
 .legal-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 26px 22px; }
 .legal-card h2 { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
@@ -619,7 +624,7 @@ h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
 .legal-contact a { color: var(--accent); font-weight: 700; }
 @media (min-width: 1000px) {
   .legal { grid-template-columns: 240px 1fr; gap: 56px; }
-  .legal-toc { display: block; position: sticky; top: calc(var(--header-h) + 32px); align-self: start; }
+  .legal-toc { display: block; position: sticky; top: calc(var(--header-h) + 32px); align-self: start; max-height: calc(100vh - var(--header-h) - 48px); overflow-y: auto; }
   .legal-toc p { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
   .legal-toc a { display: block; padding: 8px 0; text-decoration: none; font-weight: 600; border-bottom: 1px solid var(--line); }
   .legal-toc a:hover { color: var(--muted); }
