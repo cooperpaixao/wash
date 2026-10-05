@@ -99,17 +99,26 @@
     }
   });
 
-  /* Prices: single vs monthly */
+  /* Prices: single vs monthly.
+     data-single is the per-wash price with HST included; data-monthly is the membership price before HST. */
+  var HST = 0.15; /* New Brunswick HST */
   var plan = "single";
   var amounts = document.querySelectorAll(".price-amt");
   var pers = document.querySelectorAll("[data-per]");
   var planNote = document.querySelector("[data-plan-note]");
   var noteSingle = planNote ? planNote.innerHTML : "";
-  var noteMonthly = "Memberships are one wash a day, every day, at your tier, plus free vacuums every visit. <a href=\"#membership\">See how the tag works.</a>";
+  var noteMonthly = "Memberships are one wash a day, every day, at your level, plus free vacuums every visit. Membership prices are plus HST. <a href=\"#membership\">See how the tag works.</a>";
+  var perText = { single: "per wash<small>HST included</small>", monthly: "per month<small>plus HST</small>" };
 
   function price(tier, which) {
     var el = document.querySelector('.price-amt[data-tier="' + tier + '"]');
     return el ? Number(el.getAttribute("data-" + which)) : 0;
+  }
+  function priceHTML(n) {
+    var cents = Math.round(n * 100);
+    var whole = Math.floor(cents / 100);
+    var rest = cents % 100;
+    return whole + (rest ? '<span class="price-cents">.' + (rest < 10 ? "0" : "") + rest + "</span>" : "");
   }
 
   document.querySelectorAll("[data-plan]").forEach(function (btn) {
@@ -119,14 +128,14 @@
         b.setAttribute("aria-pressed", String(b === btn));
       });
       amounts.forEach(function (a) {
-        a.textContent = a.getAttribute("data-" + plan);
+        a.innerHTML = priceHTML(Number(a.getAttribute("data-" + plan)));
         var wrap = a.parentElement;
         wrap.classList.remove("is-swapping");
         void wrap.offsetWidth;
         wrap.classList.add("is-swapping");
       });
       pers.forEach(function (p) {
-        p.textContent = plan === "single" ? "/ wash" : "/ month";
+        p.innerHTML = perText[plan];
       });
       if (planNote) planNote.innerHTML = plan === "single" ? noteSingle : noteMonthly;
     });
@@ -144,13 +153,18 @@
     var valMonthly = calc.querySelector("[data-val-monthly]");
     var verdict = calc.querySelector("[data-calc-verdict]");
 
-    var money = function (n) { return "$" + Math.round(n); };
+    var cents = function (n) { return Math.round(n * 100) / 100; };
+    var money = function (n) {
+      var r = cents(n);
+      return "$" + (r % 1 === 0 ? r.toFixed(0) : r.toFixed(2));
+    };
 
+    /* Single washes already include HST, so add HST to the membership for a fair comparison */
     function update() {
       var n = Number(rangeEl.value);
       var single = price(tier, "single");
-      var monthly = price(tier, "monthly");
-      var payGo = single * n;
+      var monthly = cents(price(tier, "monthly") * (1 + HST));
+      var payGo = cents(single * n);
       var max = Math.max(payGo, monthly, 1);
 
       countEl.textContent = n;

@@ -2,14 +2,26 @@
 
 > Wash 66 is a soft-touch express exterior car wash at 7 Pettingill Road, Quispamsis, NB E2E 6B1, Canada. It offers single washes, unlimited monthly memberships (one wash per day) using an RFID windshield tag, auto detailing by appointment, and covered vacuum bays. Open every day 8 am to 7 pm, holidays 10 am to 6 pm, closed Christmas Day. Phone 506-847-7627, email info@wash66.com.
 
-## Washes and prices (CAD, before HST)
+## Washes and prices (CAD)
 
-- Good: $12 per wash, or $30 per month as a membership
-- Better: $16 per wash, or $36 per month as a membership
-- Best: $20 per wash, or $42 per month as a membership
-- 3 months paid up front: Good $81, Better $97, Best $113
-- Buy 6 months of any membership, get the 7th month free
+- Good: $14.95 per wash (HST included), or $36 + HST per month as a membership
+- Better: $18.40 per wash (HST included), or $39 + HST per month as a membership
+- Best: $21.85 per wash (HST included), or $44 + HST per month as a membership
+- 3 months paid up front (plus HST): Good $85, Better $94, Best $107
+- Buy 6 months, get the 7th month free: $262 + HST
 - Vacuums are free with any wash or membership, $5 on their own
+
+## What each wash includes
+
+- Good: pre-soak, wheel cleaner, soft-touch wash, spot-free rinse, drying agent and dryers
+- Better: everything in Good, plus triple shine foam, undercarriage rinse with rust inhibitor and clear coat protectant
+- Best: everything in Better, plus premium protectant and premium wax
+
+## Auto detailing (book ahead)
+
+- Package 1, $60: Good wash, towel dry, interior vacuum. Add the interior (wipe-down and floor mats) for $30
+- Package 2, $110: Better wash, towel dry, acid-cleaned rims, interior vacuum, door jambs, floor mats. Add interior dressing for $25
+- Package 3, $150: Best wash, towel dry, acid-cleaned rims, interior and trunk vacuumed, interior cleaned and dressed, door and trunk jambs, floor mats, spray wax, windows cleaned, tires dressed
 
 ## Membership terms
 
@@ -24,7 +36,7 @@
 - [About Wash 66](https://wash66.com/about/): Wash 66 opened in Quispamsis in 2019: a soft-touch express tunnel built for Maritime winters, with a reclaim system that reuses nearly all of its water.
 - [Car care tips](https://wash66.com/car-care/): Practical car care advice from Wash 66 in Quispamsis: washing through a New Brunswick winter, soft-touch vs touchless washes, and whether a membership pays off.
 - [Contact us](https://wash66.com/contact/): Wash 66 is at 7 Pettingill Road, Quispamsis, NB. Open every day 8 am to 7 pm. Call 506-847-7627, email info@wash66.com or send us a message.
-- [Auto detailing](https://wash66.com/detailing/): Express, Better and Best auto detailing at Wash 66 in Quispamsis: interior cleaning, shampooed seats and carpets, rims and hand wax. Book by phone or online.
+- [Auto detailing](https://wash66.com/detailing/): Three auto detailing packages at Wash 66 in Quispamsis, $60 to $150: towel dry, interior vacuum, acid-cleaned rims, door jambs, spray wax and dressed tires. Book by phone or online.
 - [Disclaimers](https://wash66.com/disclaimers/): Wash 66 policies: safety in the tunnel, vehicles we can't wash, detailing, vacuums, membership packages, pricing and customer conduct.
 - [Questions](https://wash66.com/faq/): Answers about Wash 66 in Quispamsis: memberships and cancelling, how long a wash takes, vacuum prices, which vehicles fit, detailing and holiday hours.
 - [Washes and packages](https://wash66.com/packages/): Good, Better and Best car washes at Wash 66 in Quispamsis. Pay per wash or join a monthly membership with one wash a day, plus 3-month and 6+1 prepay deals.

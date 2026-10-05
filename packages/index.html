@@ -119,8 +119,14 @@
           {
             "@type": "Offer",
             "name": "Good wash",
-            "price": 12,
+            "price": 14.95,
             "priceCurrency": "CAD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": 14.95,
+              "priceCurrency": "CAD",
+              "valueAddedTaxIncluded": true
+            },
             "itemOffered": {
               "@type": "Service",
               "name": "Good car wash"
@@ -129,13 +135,14 @@
           {
             "@type": "Offer",
             "name": "Good monthly membership",
-            "price": 30,
+            "price": 36,
             "priceCurrency": "CAD",
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
-              "price": 30,
+              "price": 36,
               "priceCurrency": "CAD",
-              "unitCode": "MON"
+              "unitCode": "MON",
+              "valueAddedTaxIncluded": false
             },
             "itemOffered": {
               "@type": "Service",
@@ -145,8 +152,14 @@
           {
             "@type": "Offer",
             "name": "Better wash",
-            "price": 16,
+            "price": 18.40,
             "priceCurrency": "CAD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": 18.40,
+              "priceCurrency": "CAD",
+              "valueAddedTaxIncluded": true
+            },
             "itemOffered": {
               "@type": "Service",
               "name": "Better car wash"
@@ -155,13 +168,14 @@
           {
             "@type": "Offer",
             "name": "Better monthly membership",
-            "price": 36,
+            "price": 39,
             "priceCurrency": "CAD",
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
-              "price": 36,
+              "price": 39,
               "priceCurrency": "CAD",
-              "unitCode": "MON"
+              "unitCode": "MON",
+              "valueAddedTaxIncluded": false
             },
             "itemOffered": {
               "@type": "Service",
@@ -171,8 +185,14 @@
           {
             "@type": "Offer",
             "name": "Best wash",
-            "price": 20,
+            "price": 21.85,
             "priceCurrency": "CAD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": 21.85,
+              "priceCurrency": "CAD",
+              "valueAddedTaxIncluded": true
+            },
             "itemOffered": {
               "@type": "Service",
               "name": "Best car wash"
@@ -181,13 +201,14 @@
           {
             "@type": "Offer",
             "name": "Best monthly membership",
-            "price": 42,
+            "price": 44,
             "priceCurrency": "CAD",
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
-              "price": 42,
+              "price": 44,
               "priceCurrency": "CAD",
-              "unitCode": "MON"
+              "unitCode": "MON",
+              "valueAddedTaxIncluded": false
             },
             "itemOffered": {
               "@type": "Service",
@@ -294,7 +315,7 @@
           <h2>Choose your wash</h2>
           <p class="section-lede">Switch between per-wash and monthly prices. Every level includes free use of the covered vacuums.</p>
         </div>
-<!-- Prices come from src/data.json (tiers). -->
+<!-- Wash prices: data-single is the per-wash price with HST included, data-monthly is the membership price before HST. assets/js/main.js reads both. -->
 <div class="tiers-head">
   <div class="toggle" role="group" aria-label="Show prices for">
     <button type="button" class="toggle-btn" aria-pressed="true" data-plan="single">Per wash</button>
@@ -305,7 +326,7 @@
   <article class="tier">
     <h3 class="tier-name">Good</h3>
     <p class="tier-tag">A solid everyday clean</p>
-    <p class="price"><span class="price-cur">$</span><span class="price-amt" data-tier="good" data-single="12" data-monthly="30">12</span><span class="price-per" data-per>per wash</span></p>
+    <p class="price"><span class="price-cur">$</span><span class="price-amt" data-tier="good" data-single="14.95" data-monthly="36">14<span class="price-cents">.95</span></span><span class="price-per" data-per>per wash<small>HST included</small></span></p>
     <ul class="feat">
       <li>Pre-soak</li>
       <li>Wheel cleaner</li>
@@ -318,27 +339,27 @@
   <article class="tier tier--better">
     <p class="tier-flag">Our pick for salt season</p>
     <h3 class="tier-name">Better</h3>
-    <p class="tier-tag">Adds the underbody flush</p>
-    <p class="price"><span class="price-cur">$</span><span class="price-amt" data-tier="better" data-single="16" data-monthly="36">16</span><span class="price-per" data-per>per wash</span></p>
+    <p class="tier-tag">Adds the undercarriage rinse</p>
+    <p class="price"><span class="price-cur">$</span><span class="price-amt" data-tier="better" data-single="18.40" data-monthly="39">18<span class="price-cents">.40</span></span><span class="price-per" data-per>per wash<small>HST included</small></span></p>
     <p class="feat-lead">Everything in Good, plus</p>
     <ul class="feat">
       <li>Triple shine foam</li>
-      <li>Underbody flush with rust inhibitor</li>
-      <li>Blazin' Glaze clear coat</li>
+      <li>Undercarriage rinse with rust inhibitor</li>
+      <li>Clear coat protectant</li>
     </ul>
   </article>
   <article class="tier tier--best">
     <h3 class="tier-name">Best</h3>
     <p class="tier-tag">The full treatment</p>
-    <p class="price"><span class="price-cur">$</span><span class="price-amt" data-tier="best" data-single="20" data-monthly="42">20</span><span class="price-per" data-per>per wash</span></p>
+    <p class="price"><span class="price-cur">$</span><span class="price-amt" data-tier="best" data-single="21.85" data-monthly="44">21<span class="price-cents">.85</span></span><span class="price-per" data-per>per wash<small>HST included</small></span></p>
     <p class="feat-lead">Everything in Better, plus</p>
     <ul class="feat">
-      <li>Premium Ice Wax</li>
-      <li>Tire shine</li>
+      <li>Premium protectant</li>
+      <li>Premium wax</li>
     </ul>
   </article>
 </div>
-<p class="tiers-note" data-plan-note>Every wash includes free use of the covered vacuums. Prices are before HST.</p>
+<p class="tiers-note" data-plan-note>Every wash includes free use of the covered vacuums. Single wash prices include HST.</p>
 
       </div>
     </section>
@@ -356,25 +377,23 @@
     <p class="promo-copy">Pay for three months of any membership at once and pay less than three separate months.</p>
     <table class="promo-table">
       <tbody>
-        <tr><th scope="row">Good</th><td>$81</td><td>save $9</td></tr>
-        <tr><th scope="row">Better</th><td>$97</td><td>save $11</td></tr>
-        <tr><th scope="row">Best</th><td>$113</td><td>save $13</td></tr>
+        <tr><th scope="row">Good</th><td>$85</td><td>save $23</td></tr>
+        <tr><th scope="row">Better</th><td>$94</td><td>save $23</td></tr>
+        <tr><th scope="row">Best</th><td>$107</td><td>save $25</td></tr>
       </tbody>
     </table>
   </article>
   <article class="promo promo--dark">
     <h3 class="promo-title">Buy six months, get the seventh free</h3>
-    <p class="promo-copy">Seven months of washing for the price of six. Start in October and you're covered through April.</p>
+    <p class="promo-copy">Seven months of washing, paid once. Start in October and you're covered through April.</p>
     <table class="promo-table">
       <tbody>
-        <tr><th scope="row">Good</th><td>$180</td><td>for 7 months</td></tr>
-        <tr><th scope="row">Better</th><td>$216</td><td>for 7 months</td></tr>
-        <tr><th scope="row">Best</th><td>$252</td><td>for 7 months</td></tr>
+        <tr><th scope="row">7 months</th><td>$262</td><td>one payment</td></tr>
       </tbody>
     </table>
   </article>
 </div>
-<p class="promo-fine">Ask at the wash which offers your membership qualifies for.</p>
+<p class="promo-fine">Prepay prices are plus HST. Ask at the wash which offers your membership qualifies for.</p>
 
 <aside class="terms" aria-labelledby="terms-title">
   <div class="terms-head">
@@ -389,7 +408,7 @@
     <div><dt>Washes</dt><dd>One per day.</dd></div>
     <div><dt>Changes</dt><dd>Made at the wash, not by phone or email.</dd></div>
   </dl>
-  <p class="terms-foot">Prices are before HST. Fleet rates are available on request.</p>
+  <p class="terms-foot">Membership prices are plus HST. Fleet rates are available on request.</p>
 </aside>
 
       </div>
@@ -488,14 +507,14 @@
   </div>
   <div class="calc-out" aria-live="polite">
     <div class="bar-row">
-      <span class="bar-label">Paying per wash</span>
+      <span class="bar-label">Paying per wash <small>(HST included)</small></span>
       <span class="bar"><span class="bar-fill bar-fill--single" data-bar-single></span></span>
-      <span class="bar-val" data-val-single>$16</span>
+      <span class="bar-val" data-val-single>$110.40</span>
     </div>
     <div class="bar-row">
-      <span class="bar-label">Membership</span>
+      <span class="bar-label">Membership <small>(with HST)</small></span>
       <span class="bar"><span class="bar-fill bar-fill--monthly" data-bar-monthly></span></span>
-      <span class="bar-val" data-val-monthly>$36</span>
+      <span class="bar-val" data-val-monthly>$44.85</span>
     </div>
     <p class="calc-verdict" data-calc-verdict>&nbsp;</p>
   </div>
@@ -571,7 +590,7 @@
       </nav>
     </div>
     <div class="wrap footer-bottom">
-      <p>&copy; 2026 Wash 66. Prices in Canadian dollars, before HST.</p>
+      <p>&copy; 2026 Wash 66. Prices in Canadian dollars. Single washes include HST; memberships are plus HST.</p>
       <a href="/disclaimers/">Disclaimers</a>
     </div>
   </footer>

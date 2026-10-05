@@ -205,8 +205,8 @@ h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
 
 /* ---------- Hero ---------- */
 .hero { position: relative; isolation: isolate; overflow: hidden; background: var(--ink-deep); color: var(--white); padding: clamp(28px, 5vw, 72px) 0 clamp(56px, 8vw, 104px); }
-.hero-bg { position: absolute; inset: 0; z-index: -2; background: url("../img/photos/building-800.webp") 60% 35% / cover no-repeat; opacity: .6; }
-@media (min-width: 900px) { .hero-bg { background-image: url("../img/photos/building.webp"); background-position: 50% 30%; } }
+.hero-bg { position: absolute; inset: 0; z-index: -2; background: 60% 35% / cover no-repeat; opacity: .6; }
+@media (min-width: 900px) { .hero-bg { background-position: 50% 30%; } }
 .hero-overlay {
   position: absolute; inset: 0; z-index: -1;
   background:
@@ -343,6 +343,8 @@ h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
 .price-cur { font-size: 1.6rem; font-weight: 800; align-self: flex-start; margin-top: .35em; }
 .price-amt { font-size: clamp(3.4rem, 2.8rem + 2.4vw, 4.4rem); font-weight: 800; line-height: .9; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
 .price-per { font-weight: 600; color: var(--muted); margin-left: 6px; }
+.price-per small { display: block; font-size: .8em; font-weight: 600; opacity: .85; margin-top: 2px; }
+.price-cents { font-size: .5em; letter-spacing: -0.02em; vertical-align: .72em; margin-left: 1px; }
 .price.is-swapping .price-amt { animation: pop .35s var(--ease); }
 @keyframes pop { 0% { opacity: 0; transform: translateY(6px); } 100% { opacity: 1; transform: none; } }
 .feat-lead { font-weight: 700; font-size: .9rem; margin: 0 0 10px; color: var(--muted); }
@@ -425,6 +427,7 @@ h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
 .calc-out { display: grid; gap: 16px; align-content: center; }
 .bar-row { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "label val" "bar bar"; gap: 6px 12px; align-items: baseline; }
 .bar-label { grid-area: label; font-weight: 600; }
+.bar-label small { display: block; font-size: .82em; font-weight: 500; color: var(--muted); }
 .bar-val { grid-area: val; font-weight: 900; font-size: 1.5rem; font-variant-numeric: tabular-nums; }
 .bar { grid-area: bar; height: 16px; background: var(--paper-2); border-radius: 8px; overflow: hidden; }
 .bar-fill { display: block; height: 100%; width: 0; border-radius: 8px; transition: width .2s ease-out; }
@@ -638,7 +641,9 @@ h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
 .detail-name { font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem); font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; }
 .detail-price { margin: 8px 0 18px; padding-bottom: 16px; border-bottom: 1px solid var(--line); color: var(--muted); font-weight: 600; }
 .detail-price strong { color: var(--ink); font-size: 1.9rem; font-weight: 800; margin-left: 4px; }
-.detail .feat { margin-bottom: 22px; }
+.detail .feat { margin-bottom: 18px; }
+.detail-addon { margin: 0 0 22px; padding: 10px 14px; border-radius: 12px; background: var(--paper-2); font-size: .92rem; color: var(--text-2); }
+.detail-addon strong { color: var(--ink); }
 .detail .btn { margin-top: auto; }
 .detail--best { border-color: var(--accent); }
 @media (min-width: 900px) { .details { grid-template-columns: repeat(3, 1fr); gap: 20px; } .detail { padding: 34px 30px 30px; } }
@@ -741,6 +746,7 @@ h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
 .data-table th, .data-table td { text-align: left; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); }
 .data-table thead th { font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
 .data-table td { font-variant-numeric: tabular-nums; }
+.data-table td small { color: var(--muted); font-size: .85em; white-space: nowrap; }
 
 /* Cards (services) */
 .cards-3 { display: grid; gap: 16px; }

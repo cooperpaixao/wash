@@ -119,8 +119,14 @@
           {
             "@type": "Offer",
             "name": "Good wash",
-            "price": 12,
+            "price": 14.95,
             "priceCurrency": "CAD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": 14.95,
+              "priceCurrency": "CAD",
+              "valueAddedTaxIncluded": true
+            },
             "itemOffered": {
               "@type": "Service",
               "name": "Good car wash"
@@ -129,13 +135,14 @@
           {
             "@type": "Offer",
             "name": "Good monthly membership",
-            "price": 30,
+            "price": 36,
             "priceCurrency": "CAD",
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
-              "price": 30,
+              "price": 36,
               "priceCurrency": "CAD",
-              "unitCode": "MON"
+              "unitCode": "MON",
+              "valueAddedTaxIncluded": false
             },
             "itemOffered": {
               "@type": "Service",
@@ -145,8 +152,14 @@
           {
             "@type": "Offer",
             "name": "Better wash",
-            "price": 16,
+            "price": 18.40,
             "priceCurrency": "CAD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": 18.40,
+              "priceCurrency": "CAD",
+              "valueAddedTaxIncluded": true
+            },
             "itemOffered": {
               "@type": "Service",
               "name": "Better car wash"
@@ -155,13 +168,14 @@
           {
             "@type": "Offer",
             "name": "Better monthly membership",
-            "price": 36,
+            "price": 39,
             "priceCurrency": "CAD",
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
-              "price": 36,
+              "price": 39,
               "priceCurrency": "CAD",
-              "unitCode": "MON"
+              "unitCode": "MON",
+              "valueAddedTaxIncluded": false
             },
             "itemOffered": {
               "@type": "Service",
@@ -171,8 +185,14 @@
           {
             "@type": "Offer",
             "name": "Best wash",
-            "price": 20,
+            "price": 21.85,
             "priceCurrency": "CAD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": 21.85,
+              "priceCurrency": "CAD",
+              "valueAddedTaxIncluded": true
+            },
             "itemOffered": {
               "@type": "Service",
               "name": "Best car wash"
@@ -181,13 +201,14 @@
           {
             "@type": "Offer",
             "name": "Best monthly membership",
-            "price": 42,
+            "price": 44,
             "priceCurrency": "CAD",
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
-              "price": 42,
+              "price": 44,
               "priceCurrency": "CAD",
-              "unitCode": "MON"
+              "unitCode": "MON",
+              "valueAddedTaxIncluded": false
             },
             "itemOffered": {
               "@type": "Service",
@@ -311,13 +332,13 @@
         <ul class="strip-list">
           <li>Open 7 days a week</li>
           <li>Covered vacuum bays</li>
-          <li>Underbody flush on Better and Best</li>
+          <li>Undercarriage rinse on Better and Best</li>
           <li>On Pettingill Road since 2019</li>
         </ul>
         <ul class="strip-list strip-clone" aria-hidden="true">
           <li>Open 7 days a week</li>
           <li>Covered vacuum bays</li>
-          <li>Underbody flush on Better and Best</li>
+          <li>Undercarriage rinse on Better and Best</li>
           <li>On Pettingill Road since 2019</li>
         </ul>
       </div>
@@ -329,7 +350,7 @@
           <h2>Three washes. Pay once, or wash all month.</h2>
           <p class="section-lede">Every level runs through the same soft-touch tunnel. The higher levels add protection that matters most in salt season.</p>
         </div>
-<!-- Prices come from src/data.json (tiers). -->
+<!-- Wash prices: data-single is the per-wash price with HST included, data-monthly is the membership price before HST. assets/js/main.js reads both. -->
 <div class="tiers-head">
   <div class="toggle" role="group" aria-label="Show prices for">
     <button type="button" class="toggle-btn" aria-pressed="true" data-plan="single">Per wash</button>
@@ -340,7 +361,7 @@
   <article class="tier">
     <h3 class="tier-name">Good</h3>
     <p class="tier-tag">A solid everyday clean</p>
-    <p class="price"><span class="price-cur">$</span><span class="price-amt" data-tier="good" data-single="12" data-monthly="30">12</span><span class="price-per" data-per>per wash</span></p>
+    <p class="price"><span class="price-cur">$</span><span class="price-amt" data-tier="good" data-single="14.95" data-monthly="36">14<span class="price-cents">.95</span></span><span class="price-per" data-per>per wash<small>HST included</small></span></p>
     <ul class="feat">
       <li>Pre-soak</li>
       <li>Wheel cleaner</li>
@@ -353,27 +374,27 @@
   <article class="tier tier--better">
     <p class="tier-flag">Our pick for salt season</p>
     <h3 class="tier-name">Better</h3>
-    <p class="tier-tag">Adds the underbody flush</p>
-    <p class="price"><span class="price-cur">$</span><span class="price-amt" data-tier="better" data-single="16" data-monthly="36">16</span><span class="price-per" data-per>per wash</span></p>
+    <p class="tier-tag">Adds the undercarriage rinse</p>
+    <p class="price"><span class="price-cur">$</span><span class="price-amt" data-tier="better" data-single="18.40" data-monthly="39">18<span class="price-cents">.40</span></span><span class="price-per" data-per>per wash<small>HST included</small></span></p>
     <p class="feat-lead">Everything in Good, plus</p>
     <ul class="feat">
       <li>Triple shine foam</li>
-      <li>Underbody flush with rust inhibitor</li>
-      <li>Blazin' Glaze clear coat</li>
+      <li>Undercarriage rinse with rust inhibitor</li>
+      <li>Clear coat protectant</li>
     </ul>
   </article>
   <article class="tier tier--best">
     <h3 class="tier-name">Best</h3>
     <p class="tier-tag">The full treatment</p>
-    <p class="price"><span class="price-cur">$</span><span class="price-amt" data-tier="best" data-single="20" data-monthly="42">20</span><span class="price-per" data-per>per wash</span></p>
+    <p class="price"><span class="price-cur">$</span><span class="price-amt" data-tier="best" data-single="21.85" data-monthly="44">21<span class="price-cents">.85</span></span><span class="price-per" data-per>per wash<small>HST included</small></span></p>
     <p class="feat-lead">Everything in Better, plus</p>
     <ul class="feat">
-      <li>Premium Ice Wax</li>
-      <li>Tire shine</li>
+      <li>Premium protectant</li>
+      <li>Premium wax</li>
     </ul>
   </article>
 </div>
-<p class="tiers-note" data-plan-note>Every wash includes free use of the covered vacuums. Prices are before HST.</p>
+<p class="tiers-note" data-plan-note>Every wash includes free use of the covered vacuums. Single wash prices include HST.</p>
 
 <aside class="terms" aria-labelledby="terms-title">
   <div class="terms-head">
@@ -388,7 +409,7 @@
     <div><dt>Washes</dt><dd>One per day.</dd></div>
     <div><dt>Changes</dt><dd>Made at the wash, not by phone or email.</dd></div>
   </dl>
-  <p class="terms-foot">Prices are before HST. Fleet rates are available on request.</p>
+  <p class="terms-foot">Membership prices are plus HST. Fleet rates are available on request.</p>
 </aside>
 
         <p class="more-link"><a href="/packages/">Prepay deals, membership details and a cost calculator</a></p>
@@ -528,10 +549,10 @@
         <div class="winter-copy">
           <h2>Road salt doesn't stop at the paint</h2>
           <p>From November to April, every trip down Hampton Road or out to Route 1 puts a fresh coat of salt and brine on your car. Most of it ends up underneath, where you can't see it and the rain won't rinse it off.</p>
-          <p>Left there, it works on brake lines, rocker panels, wheel wells and the exhaust. Better and Best include an underbody flush with rust inhibitor, and with a membership, washing after every storm costs nothing extra.</p>
+          <p>Left there, it works on brake lines, rocker panels, wheel wells and the exhaust. Better and Best include an undercarriage rinse with rust inhibitor, and with a membership, washing after every storm costs nothing extra.</p>
           <ul class="tips">
             <li><strong>Wash after every storm,</strong> not once in spring. Salt does its damage while it sits.</li>
-            <li><strong>Choose a wash with an underbody flush</strong> from the first snow until the street sweepers come out.</li>
+            <li><strong>Choose a wash with an undercarriage rinse</strong> from the first snow until the street sweepers come out.</li>
             <li><strong>On a really cold day,</strong> open and close your doors once after the wash so the seals don't freeze shut.</li>
           </ul>
           <p class="more-link"><a href="/car-care/winter-car-wash-new-brunswick/">How often to wash your car in a New Brunswick winter</a></p>
@@ -561,41 +582,49 @@
           <h2>Detailing, booked ahead</h2>
           <p class="section-lede">Three levels of detailing for when the inside needs more than a vacuum. Every detail includes a wash, towel dry and interior vacuum.</p>
         </div>
-<!-- Detailing prices come from src/data.json (detailing). Contents are placeholders. -->
+<!-- Detailing packages and prices from the Wash 66 price sheet. -->
 <div class="details">
   <article class="detail">
-    <h3 class="detail-name">Express</h3>
-    <p class="detail-price">From <strong>$49</strong></p>
+    <h3 class="detail-name">Package 1</h3>
+    <p class="detail-price"><strong>$60</strong></p>
     <ul class="feat">
-      <li>Exterior wash and towel dry</li>
+      <li>Good wash</li>
+      <li>Towel dry</li>
       <li>Interior vacuum</li>
-      <li>Interior wipe down</li>
-      <li>Floor mats cleaned</li>
     </ul>
-    <a class="btn btn-outline btn-block" href="/detailing/#book" data-inquire="Express detail">Book an Express detail</a>
+    <p class="detail-addon"><strong>Add the interior for $30:</strong> interior wipe-down and floor mats</p>
+    <a class="btn btn-outline btn-block" href="/detailing/#book" data-inquire="Package 1 detail">Book Package 1</a>
   </article>
   <article class="detail">
-    <h3 class="detail-name">Better</h3>
-    <p class="detail-price">From <strong>$129</strong></p>
-    <p class="feat-lead">Everything in Express, plus</p>
+    <h3 class="detail-name">Package 2</h3>
+    <p class="detail-price"><strong>$110</strong></p>
     <ul class="feat">
-      <li>Door and trunk jambs</li>
-      <li>Inside windows</li>
-      <li>Acid wash on the rims</li>
-      <li>Tire shine</li>
+      <li>Better wash</li>
+      <li>Towel dry</li>
+      <li>Acid-cleaned rims</li>
+      <li>Interior vacuum</li>
+      <li>Door jambs</li>
+      <li>Floor mats</li>
     </ul>
-    <a class="btn btn-outline btn-block" href="/detailing/#book" data-inquire="Better detail">Book a Better detail</a>
+    <p class="detail-addon"><strong>Add interior dressing for $25</strong></p>
+    <a class="btn btn-outline btn-block" href="/detailing/#book" data-inquire="Package 2 detail">Book Package 2</a>
   </article>
   <article class="detail detail--best">
-    <h3 class="detail-name">Best</h3>
-    <p class="detail-price">From <strong>$219</strong></p>
-    <p class="feat-lead">Everything in Better, plus</p>
+    <h3 class="detail-name">Package 3</h3>
+    <p class="detail-price"><strong>$150</strong></p>
     <ul class="feat">
-      <li>Seats and carpets shampooed</li>
-      <li>Trunk vacuumed and wiped</li>
-      <li>Hand-applied wax</li>
+      <li>Best wash</li>
+      <li>Towel dry</li>
+      <li>Acid-cleaned rims</li>
+      <li>Interior and trunk vacuumed</li>
+      <li>Interior cleaned and dressed</li>
+      <li>Door and trunk jambs</li>
+      <li>Floor mats</li>
+      <li>Spray wax</li>
+      <li>Windows cleaned</li>
+      <li>Tires dressed</li>
     </ul>
-    <a class="btn btn-primary btn-block" href="/detailing/#book" data-inquire="Best detail">Book a Best detail</a>
+    <a class="btn btn-primary btn-block" href="/detailing/#book" data-inquire="Package 3 detail">Book Package 3</a>
   </article>
 </div>
 
@@ -744,7 +773,7 @@
       </nav>
     </div>
     <div class="wrap footer-bottom">
-      <p>&copy; 2026 Wash 66. Prices in Canadian dollars, before HST.</p>
+      <p>&copy; 2026 Wash 66. Prices in Canadian dollars. Single washes include HST; memberships are plus HST.</p>
       <a href="/disclaimers/">Disclaimers</a>
     </div>
   </footer>
