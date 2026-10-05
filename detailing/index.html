@@ -168,19 +168,37 @@
           "@type": "Offer",
           "name": "Package 1 detail",
           "price": 60,
-          "priceCurrency": "CAD"
+          "priceCurrency": "CAD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": 60,
+            "priceCurrency": "CAD",
+            "valueAddedTaxIncluded": false
+          }
         },
         {
           "@type": "Offer",
           "name": "Package 2 detail",
           "price": 110,
-          "priceCurrency": "CAD"
+          "priceCurrency": "CAD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": 110,
+            "priceCurrency": "CAD",
+            "valueAddedTaxIncluded": false
+          }
         },
         {
           "@type": "Offer",
           "name": "Package 3 detail",
           "price": 150,
-          "priceCurrency": "CAD"
+          "priceCurrency": "CAD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": 150,
+            "priceCurrency": "CAD",
+            "valueAddedTaxIncluded": false
+          }
         }
       ]
     },
@@ -267,7 +285,7 @@
 <div class="details">
   <article class="detail">
     <h3 class="detail-name">Package 1</h3>
-    <p class="detail-price"><strong>$60</strong></p>
+    <p class="detail-price"><strong>$60</strong> plus HST</p>
     <ul class="feat">
       <li>Good wash</li>
       <li>Towel dry</li>
@@ -278,7 +296,7 @@
   </article>
   <article class="detail">
     <h3 class="detail-name">Package 2</h3>
-    <p class="detail-price"><strong>$110</strong></p>
+    <p class="detail-price"><strong>$110</strong> plus HST</p>
     <ul class="feat">
       <li>Better wash</li>
       <li>Towel dry</li>
@@ -292,7 +310,7 @@
   </article>
   <article class="detail detail--best">
     <h3 class="detail-name">Package 3</h3>
-    <p class="detail-price"><strong>$150</strong></p>
+    <p class="detail-price"><strong>$150</strong> plus HST</p>
     <ul class="feat">
       <li>Best wash</li>
       <li>Towel dry</li>
@@ -320,7 +338,7 @@
             <li><strong>Interior on Package 1, $30.</strong> Interior wipe-down and floor mats.</li>
             <li><strong>Interior dressing on Package 2, $25.</strong></li>
           </ul>
-          <p>Package 3 already includes both.</p>
+          <p>Package 3 already includes both. Detailing and add-on prices are plus HST.</p>
         </div>
         <div class="prose">
           <h2>Before you bring it in</h2>
@@ -412,7 +430,7 @@
       </nav>
     </div>
     <div class="wrap footer-bottom">
-      <p>&copy; 2026 Wash 66. Prices in Canadian dollars. Single washes include HST; memberships are plus HST.</p>
+      <p>&copy; 2026 Wash 66. Prices in Canadian dollars. Single washes include HST; memberships and detailing are plus HST.</p>
       <a href="/disclaimers/">Disclaimers</a>
     </div>
   </footer>
