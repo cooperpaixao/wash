@@ -183,6 +183,81 @@
     update();
   }
 
+  /* Detailing buttons prefill the booking form (same page, or via ?package= on /detailing/) */
+  var msg = document.getElementById("cf-msg");
+  function prefill(what) {
+    if (!msg || msg.value.trim()) return;
+    msg.value = "Hi, I'd like to book a " + what + ". My vehicle is a ";
+  }
+  document.querySelectorAll("[data-inquire]").forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      var what = link.getAttribute("data-inquire");
+      if (!msg) {
+        link.href = "/detailing/?package=" + encodeURIComponent(what) + "#book";
+        return;
+      }
+      e.preventDefault();
+      prefill(what);
+      var book = document.getElementById("book") || msg;
+      book.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+      setTimeout(function () { msg.focus(); msg.setSelectionRange(msg.value.length, msg.value.length); }, reduceMotion ? 0 : 500);
+    });
+  });
+  var params = new URLSearchParams(window.location.search);
+  if (params.get("package")) prefill(params.get("package"));
+
+  /* Map: load Google Maps only when asked, so pages stay fast and free of third-party errors */
+  document.querySelectorAll("[data-map]").forEach(function (box) {
+    var btn = box.querySelector("[data-map-load]");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var frame = document.createElement("iframe");
+      frame.src = box.getAttribute("data-map-src");
+      frame.title = "Map showing Wash 66 at 7 Pettingill Road, Quispamsis";
+      frame.loading = "lazy";
+      frame.referrerPolicy = "no-referrer-when-downgrade";
+      box.appendChild(frame);
+      box.classList.add("is-loaded");
+    });
+  });
+
+  /* Contact form: sends through FormSubmit to info@wash66.com */
+  var form = document.querySelector("[data-contact-form]");
+  if (form && params.get("sent") === "1") {
+    var done = form.querySelector("[data-form-status]");
+    if (done) { done.className = "form-status is-ok"; done.textContent = "Thanks, your message is on its way. We'll get back to you soon."; }
+  }
+  if (form && window.fetch && window.FormData) {
+    var statusEl = form.querySelector("[data-form-status]");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (form.classList.contains("is-sending")) return;
+      var data = {};
+      new FormData(form).forEach(function (v, k) { data[k] = v; });
+      if (data._honey) return;
+      form.classList.add("is-sending");
+      statusEl.className = "form-status";
+      statusEl.textContent = "Sending...";
+      fetch("https://formsubmit.co/ajax/info@wash66.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      }).then(function (r) {
+        return r.json().then(function (j) { return { ok: r.ok, body: j }; });
+      }).then(function (res) {
+        if (!res.ok || String(res.body.success) === "false") throw new Error("send failed");
+        form.reset();
+        statusEl.className = "form-status is-ok";
+        statusEl.textContent = "Thanks, your message is on its way. We'll get back to you soon.";
+      }).catch(function () {
+        statusEl.className = "form-status is-error";
+        statusEl.innerHTML = 'Sorry, that didn\'t go through. Please call <a href="tel:+15068477627">506-847-7627</a> or email <a href="mailto:info@wash66.com">info@wash66.com</a>.';
+      }).then(function () {
+        form.classList.remove("is-sending");
+      });
+    });
+  }
+
   /* Open / closed right now, in Atlantic time */
   var status = document.querySelector("[data-open-status]");
   if (status && window.Intl && Intl.DateTimeFormat) {
@@ -206,6 +281,22 @@
         text.textContent = mins < open ? "Closed now. Opens at 8 am" : "Closed now. Opens tomorrow at 8 am";
       }
     } catch (err) { /* keep the static text */ }
+  }
+
+  /* On phones, the hero facts and the before/after fade in as they scroll into view */
+  var reveals = document.querySelectorAll("[data-reveal]");
+  if ("IntersectionObserver" in window) {
+    var revealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-in");
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -12% 0px" });
+    reveals.forEach(function (el) { revealObs.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("is-in"); });
   }
 
   /* Mobile action bar: show once the hero is out of view */
