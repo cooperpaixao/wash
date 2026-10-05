@@ -14,11 +14,13 @@
   /* Mobile menu */
   var menuBtn = document.querySelector("[data-menu-btn]");
   var menu = document.querySelector("[data-menu]");
-  function setMenu(open) {
+  function setMenu(open, restoreFocus) {
     if (!menuBtn || !menu) return;
     menuBtn.setAttribute("aria-expanded", String(open));
     menu.hidden = !open;
     document.body.classList.toggle("menu-open", open);
+    document.querySelectorAll("main, .site-footer, [data-action-bar]").forEach(function (el) { el.inert = open; });
+    if (!open && restoreFocus) menuBtn.focus();
   }
   if (menuBtn && menu) {
     menuBtn.addEventListener("click", function () {
@@ -28,7 +30,7 @@
       if (e.target.closest("a")) setMenu(false);
     });
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") setMenu(false);
+      if (e.key === "Escape" && menuBtn.getAttribute("aria-expanded") === "true") setMenu(false, true);
     });
     window.addEventListener("resize", function () {
       if (window.innerWidth >= 1000) setMenu(false);
@@ -50,22 +52,37 @@
       return ((e.clientX - rect.left) / rect.width) * 100;
     }
 
-    el.addEventListener("pointerdown", function (e) {
-      if (e.button !== undefined && e.button !== 0) return;
+    /* Touch waits for a sideways move, so scrolling past a slider doesn't move it */
+    var pending = null;
+    function begin(e) {
       dragging = true;
       el.classList.add("is-dragging", "has-moved");
       if (el.setPointerCapture) el.setPointerCapture(e.pointerId);
       set(fromEvent(e));
+    }
+    el.addEventListener("pointerdown", function (e) {
+      if (e.button !== undefined && e.button !== 0) return;
+      if (e.pointerType === "mouse") { begin(e); return; }
+      pending = { x: e.clientX, y: e.clientY };
     });
     el.addEventListener("pointermove", function (e) {
+      if (pending) {
+        var dx = Math.abs(e.clientX - pending.x), dy = Math.abs(e.clientY - pending.y);
+        if (dx > 8 && dx > dy) { pending = null; begin(e); }
+        else if (dy > 8) { pending = null; }
+        return;
+      }
       if (dragging) set(fromEvent(e));
     });
     function stop() {
       dragging = false;
       el.classList.remove("is-dragging");
     }
-    el.addEventListener("pointerup", stop);
-    el.addEventListener("pointercancel", stop);
+    el.addEventListener("pointerup", function (e) {
+      if (pending) { pending = null; begin(e); }
+      stop();
+    });
+    el.addEventListener("pointercancel", function () { pending = null; stop(); });
     el.addEventListener("lostpointercapture", stop);
 
     if (range) {
@@ -199,9 +216,12 @@
 
   /* Detailing buttons prefill the booking form (same page, or via ?package= on /detailing/) */
   var msg = document.getElementById("cf-msg");
+  var autoLead = /^Hi, I'd like to book a .+?\. /;
   function prefill(what) {
-    if (!msg || msg.value.trim()) return;
-    msg.value = "Hi, I'd like to book a " + what + ". My vehicle is a ";
+    if (!msg) return;
+    var lead = "Hi, I'd like to book a " + what + ". ";
+    if (!msg.value.trim()) msg.value = lead + "My vehicle is a ";
+    else if (autoLead.test(msg.value)) msg.value = msg.value.replace(autoLead, lead);
   }
   document.querySelectorAll("[data-inquire]").forEach(function (link) {
     link.addEventListener("click", function (e) {
@@ -214,7 +234,12 @@
       prefill(what);
       var book = document.getElementById("book") || msg;
       book.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
-      setTimeout(function () { msg.focus(); msg.setSelectionRange(msg.value.length, msg.value.length); }, reduceMotion ? 0 : 500);
+      setTimeout(function () {
+        var name = document.getElementById("cf-name");
+        if (name && !name.value) { name.focus({ preventScroll: true }); return; }
+        msg.focus({ preventScroll: true });
+        msg.setSelectionRange(msg.value.length, msg.value.length);
+      }, reduceMotion ? 0 : 500);
     });
   });
   var params = new URLSearchParams(window.location.search);

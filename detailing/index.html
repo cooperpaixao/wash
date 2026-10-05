@@ -33,11 +33,11 @@
   <link rel="manifest" href="/site.webmanifest">
 
   <link rel="preload" href="/assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="/assets/img/photos/car-in-soft-touch-brushes-800.webp" media="(max-width: 899px)">
-  <link rel="preload" as="image" href="/assets/img/photos/car-in-soft-touch-brushes.webp" media="(min-width: 900px)">
+  <link rel="preload" as="image" href="/assets/img/photos/car-in-soft-touch-brushes-800.webp" media="(max-width: 899px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/img/photos/car-in-soft-touch-brushes.webp" media="(min-width: 900px)" fetchpriority="high">
   <script>document.documentElement.className += " js";</script>
-  <link rel="stylesheet" href="/assets/css/styles.css?v=006545fe">
-  <script src="/assets/js/main.js?v=eb7e417e" defer></script>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=636d5f8c">
+  <script src="/assets/js/main.js?v=58bdaa29" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -240,7 +240,7 @@
 <a href="/contact/">Contact</a>
       </nav>
       <div class="header-actions">
-        <a class="btn btn-white btn-sm" href="tel:+15068477627">
+        <a class="btn btn-white btn-sm" href="tel:+15068477627" aria-label="Call Wash 66 at 506-847-7627">
           <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
           <span>506-847-7627</span>
         </a>
@@ -292,7 +292,7 @@
       <li>Towel dry</li>
       <li>Interior vacuum</li>
     </ul>
-    <p class="detail-addon"><strong>Add the interior for $30:</strong> interior wipe-down and floor mats</p>
+    <p class="detail-addon"><strong>Add the interior for&nbsp;$30:</strong> interior wipe-down and floor mats</p>
     <a class="btn btn-outline btn-block" href="/detailing/#book" data-inquire="Package 1 detail">Book Package 1</a>
   </article>
   <article class="detail">
@@ -306,7 +306,7 @@
       <li>Door jambs</li>
       <li>Floor mats</li>
     </ul>
-    <p class="detail-addon"><strong>Add interior dressing for $25</strong></p>
+    <p class="detail-addon"><strong>Add interior dressing for&nbsp;$25</strong></p>
     <a class="btn btn-outline btn-block" href="/detailing/#book" data-inquire="Package 2 detail">Book Package 2</a>
   </article>
   <article class="detail detail--best">
@@ -336,8 +336,8 @@
         <div class="prose">
           <h2>Add-ons</h2>
           <ul class="plain-list">
-            <li><strong>Interior on Package 1, $30.</strong> Interior wipe-down and floor mats.</li>
-            <li><strong>Interior dressing on Package 2, $25.</strong></li>
+            <li><strong>Interior on Package&nbsp;1,&nbsp;$30.</strong> Interior wipe-down and floor mats.</li>
+            <li><strong>Interior dressing on Package&nbsp;2,&nbsp;$25.</strong></li>
           </ul>
           <p>Package 3 already includes both. Detailing and add-on prices are plus HST.</p>
         </div>
@@ -364,7 +364,7 @@
   one-time activation email to info@wash66.com; click the link in it once. See README.
 -->
 <form class="contact-form" action="https://formsubmit.co/info@wash66.com" method="POST" data-contact-form>
-  <input type="hidden" name="_subject" value="New message from wash66.com">
+  <input type="hidden" name="_subject" value="Detailing booking request from wash66.com">
   <input type="hidden" name="_template" value="table">
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_next" value="https://wash66.com/contact/?sent=1">
@@ -375,7 +375,7 @@
   </div>
   <div class="field-row">
     <div class="field">
-      <label for="cf-phone">Phone</label>
+      <label for="cf-phone">Phone <span class="opt">(optional)</span></label>
       <input id="cf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
     </div>
     <div class="field">
@@ -384,10 +384,10 @@
     </div>
   </div>
   <div class="field">
-    <label for="cf-msg">How can we help?</label>
+    <label for="cf-msg">Your vehicle and the package you want</label>
     <textarea id="cf-msg" name="inquiry" rows="5" required></textarea>
   </div>
-  <button type="submit" class="btn btn-primary btn-block">Send message</button>
+  <button type="submit" class="btn btn-primary btn-block">Request a booking</button>
   <p class="form-status" role="status" aria-live="polite" data-form-status></p>
 </form>
 
@@ -405,15 +405,15 @@
       <div class="footer-col">
         <p class="footer-head">Visit</p>
         <address>
-          7 Pettingill Road<br>Quispamsis, NB E2E 6B1<br>
+          7 Pettingill Road<br>Quispamsis, NB&nbsp;E2E&nbsp;6B1<br>
           <a href="tel:+15068477627">506-847-7627</a><br>
           <a href="mailto:info@wash66.com">info@wash66.com</a>
         </address>
-        <p class="footer-hours">Every day 8 am to 7 pm<br>Holidays 10 am to 6 pm<br>Closed Christmas Day</p>
+        <p class="footer-hours">Every day 8&nbsp;am to 7&nbsp;pm<br>Holidays 10&nbsp;am to 6&nbsp;pm<br>Closed Christmas Day</p>
       </div>
       <nav class="footer-col" aria-label="Footer">
         <p class="footer-head">Washes</p>
-        <a href="/packages/">Washes &amp; packages</a>
+        <a href="/packages/">Packages</a>
         <a href="/packages/#membership">Memberships</a>
         <a href="/services/">Services</a>
         <a href="/detailing/">Detailing</a>
@@ -451,7 +451,7 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
       Directions
     </a>
-    <a class="action-primary" href="/packages/">Prices</a>
+    <a class="action-primary" href="#book">Book</a>
   </nav>
 </body>
 </html>

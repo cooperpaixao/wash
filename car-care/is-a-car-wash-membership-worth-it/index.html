@@ -33,11 +33,11 @@
   <link rel="manifest" href="/site.webmanifest">
 
   <link rel="preload" href="/assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="/assets/img/photos/soft-touch-car-wash-tunnel-800.webp" media="(max-width: 899px)">
-  <link rel="preload" as="image" href="/assets/img/photos/soft-touch-car-wash-tunnel.webp" media="(min-width: 900px)">
+  <link rel="preload" as="image" href="/assets/img/photos/soft-touch-car-wash-tunnel-800.webp" media="(max-width: 899px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/img/photos/soft-touch-car-wash-tunnel.webp" media="(min-width: 900px)" fetchpriority="high">
   <script>document.documentElement.className += " js";</script>
-  <link rel="stylesheet" href="/assets/css/styles.css?v=006545fe">
-  <script src="/assets/js/main.js?v=eb7e417e" defer></script>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=636d5f8c">
+  <script src="/assets/js/main.js?v=58bdaa29" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -194,7 +194,7 @@
 <a href="/contact/">Contact</a>
       </nav>
       <div class="header-actions">
-        <a class="btn btn-white btn-sm" href="tel:+15068477627">
+        <a class="btn btn-white btn-sm" href="tel:+15068477627" aria-label="Call Wash 66 at 506-847-7627">
           <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
           <span>506-847-7627</span>
         </a>
@@ -235,12 +235,12 @@
         <div class="prose">
           <h2>The math</h2>
           <p>A membership costs the same each month however often you wash, up to once a day. Single washes are priced with HST included and memberships are plus HST, so the monthly prices below include HST to keep the comparison fair:</p>
-          <table class="data-table">
-            <thead><tr><th scope="col">Wash</th><th scope="col">Per wash</th><th scope="col">Monthly with HST</th><th scope="col">Pays off at</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Good</th><td>$14.95</td><td>$41.40 <small>($36 + HST)</small></td><td>3 washes a month</td></tr>
-              <tr><th scope="row">Better</th><td>$18.40</td><td>$44.85 <small>($39 + HST)</small></td><td>3 washes a month</td></tr>
-              <tr><th scope="row">Best</th><td>$21.85</td><td>$50.60 <small>($44 + HST)</small></td><td>3 washes a month</td></tr>
+          <table class="data-table" role="table">
+            <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Wash</th><th scope="col" role="columnheader">Per wash</th><th scope="col" role="columnheader">Monthly with HST</th><th scope="col" role="columnheader">Pays off at</th></tr></thead>
+            <tbody role="rowgroup">
+              <tr role="row"><th scope="row" role="rowheader">Good</th><td role="cell">$14.95</td><td role="cell">$41.40 <small>($36 + HST)</small></td><td role="cell">3 washes a month</td></tr>
+              <tr role="row"><th scope="row" role="rowheader">Better</th><td role="cell">$18.40</td><td role="cell">$44.85 <small>($39 + HST)</small></td><td role="cell">3 washes a month</td></tr>
+              <tr role="row"><th scope="row" role="rowheader">Best</th><td role="cell">$21.85</td><td role="cell">$50.60 <small>($44 + HST)</small></td><td role="cell">3 washes a month</td></tr>
             </tbody>
           </table>
           <p>Every wash after that is free. The <a href="/packages/#membership">calculator on our packages page</a> works it out for any number of washes.</p>
@@ -286,15 +286,15 @@
       <div class="footer-col">
         <p class="footer-head">Visit</p>
         <address>
-          7 Pettingill Road<br>Quispamsis, NB E2E 6B1<br>
+          7 Pettingill Road<br>Quispamsis, NB&nbsp;E2E&nbsp;6B1<br>
           <a href="tel:+15068477627">506-847-7627</a><br>
           <a href="mailto:info@wash66.com">info@wash66.com</a>
         </address>
-        <p class="footer-hours">Every day 8 am to 7 pm<br>Holidays 10 am to 6 pm<br>Closed Christmas Day</p>
+        <p class="footer-hours">Every day 8&nbsp;am to 7&nbsp;pm<br>Holidays 10&nbsp;am to 6&nbsp;pm<br>Closed Christmas Day</p>
       </div>
       <nav class="footer-col" aria-label="Footer">
         <p class="footer-head">Washes</p>
-        <a href="/packages/">Washes &amp; packages</a>
+        <a href="/packages/">Packages</a>
         <a href="/packages/#membership">Memberships</a>
         <a href="/services/">Services</a>
         <a href="/detailing/">Detailing</a>
