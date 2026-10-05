@@ -19,8 +19,8 @@
     menuBtn.setAttribute("aria-expanded", String(open));
     menu.hidden = !open;
     document.body.classList.toggle("menu-open", open);
-    document.querySelectorAll("main, .site-footer, [data-action-bar]").forEach(function (el) { el.inert = open; });
-    if (!open && restoreFocus) menuBtn.focus();
+    document.querySelectorAll(".skip, main, .site-footer, [data-action-bar]").forEach(function (el) { el.inert = open; });
+    if (!open && restoreFocus) menuBtn.focus({ preventScroll: true });
   }
   if (menuBtn && menu) {
     menuBtn.addEventListener("click", function () {
@@ -83,7 +83,8 @@
       stop();
     });
     el.addEventListener("pointercancel", function () { pending = null; stop(); });
-    el.addEventListener("lostpointercapture", stop);
+    /* Capture moves from the knob (touch captures it implicitly) to the slider; only stop when the slider itself loses it */
+    el.addEventListener("lostpointercapture", function (e) { if (e.target === el) stop(); });
 
     if (range) {
       range.addEventListener("input", function () {
