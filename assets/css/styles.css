@@ -648,6 +648,24 @@ h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
 .detail--best { border-color: var(--accent); }
 @media (min-width: 900px) { .details { grid-template-columns: repeat(3, 1fr); gap: 20px; } .detail { padding: 34px 30px 30px; } }
 
+/* ---------- Gift cards ---------- */
+.gift { display: grid; gap: 28px; align-items: center; }
+.gift-photo { margin: 0; }
+.gift-photo img { width: 100%; height: auto; }
+.gift-copy h2 { margin-bottom: 4px; }
+.gift-points { margin: 24px 0 28px; }
+.gift-points li { color: var(--muted-light); font-weight: 450; }
+.gift-points strong { color: var(--white); font-weight: 700; }
+.gift-points a { color: var(--white); font-weight: 600; text-underline-offset: 3px; }
+.gift-points li::before { background: var(--accent-on-dark); }
+.gift-points li::after { border-color: var(--ink); }
+.gift .cta-row .btn { flex: 1 1 auto; }
+@media (min-width: 560px) { .gift .cta-row .btn { flex: 0 0 auto; } }
+@media (min-width: 900px) {
+  .gift { grid-template-columns: 1fr 1.25fr; gap: 40px; }
+  .gift-photo { order: 2; }
+}
+
 /* ---------- Review stars ---------- */
 .stars { display: inline-flex; gap: 2px; }
 .stars svg { width: 18px; height: 18px; fill: var(--star); }
