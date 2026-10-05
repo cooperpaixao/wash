@@ -1,15 +1,16 @@
-"""Stamp the stylesheet and script links with a fingerprint of their contents.
+"""Stamp the stylesheet, script and link preview image with a fingerprint.
 
-Browsers cache /assets/css/styles.css and /assets/js/main.js for a day.
-Changing the ?v= value whenever a file changes makes every browser load
-the new version right away. Run this after editing either file:
+Browsers cache /assets/css/styles.css and /assets/js/main.js for a day, and
+apps like Facebook and iMessage keep link preview images for weeks.
+Changing the ?v= value whenever a file changes makes them load the new
+version right away. Run this after editing any of those files:
 
     python3 tools/stamp-assets.py
 """
 import glob, hashlib, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ASSETS = ["/assets/css/styles.css", "/assets/js/main.js"]
+ASSETS = ["/assets/css/styles.css", "/assets/js/main.js", "/assets/img/og.jpg"]
 
 stamps = {}
 for path in ASSETS:

@@ -64,7 +64,7 @@ A few things don't read the CSS and need a manual touch if the colours change:
 
 - `<meta name="theme-color" content="#193A62">` in `index.html` and `disclaimers/index.html` (tints the phone browser bar).
 - The navy fill inside `assets/img/logo-badge.svg` and `assets/img/favicon.svg`.
-- The link preview image and home screen icon. Regenerate them with `node tools/render-share-images.mjs` (instructions at the top of that file).
+- The link preview image (`assets/img/og.jpg`, designed in `tools/share-card.html`). Regenerate it with `node tools/render-share-images.mjs`, then run `python3 tools/stamp-assets.py` (instructions at the top of that file). Add `--icon` to also redo the home screen icon.
 
 **Logo files.**
 
@@ -77,7 +77,7 @@ Both were traced from the small logo PNG on the current site. To replace them wi
 
 ## Editing other things
 
-- **After editing `assets/css/styles.css` or `assets/js/main.js`**, run `python3 tools/stamp-assets.py`. It updates the `?v=` fingerprint on every page so visitors' browsers load the new file instead of a cached copy.
+- **After editing `assets/css/styles.css` or `assets/js/main.js`, or regenerating the link preview image**, run `python3 tools/stamp-assets.py`. It updates the `?v=` fingerprint on every page so visitors' browsers (and apps showing link previews) load the new file instead of a cached copy.
 
 - **Hours** appear in three places: the Visit section in `index.html`, the JSON-LD block at the top of `index.html` (helps Google show your hours), and `assets/js/main.js` (the "Open now" badge, look for `8 * 60` and `19 * 60`).
 - **Phone and email** are plain text in the HTML. Search and replace `506-847-7627`, `+15068477627` and `info@wash66.com`.
