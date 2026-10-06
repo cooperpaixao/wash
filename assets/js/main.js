@@ -233,13 +233,12 @@
       }
       e.preventDefault();
       prefill(what);
-      var book = document.getElementById("book") || msg;
-      book.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+      var name = document.getElementById("cf-name");
+      var target = name && !name.value ? name : msg;
+      target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
       setTimeout(function () {
-        var name = document.getElementById("cf-name");
-        if (name && !name.value) { name.focus({ preventScroll: true }); return; }
-        msg.focus({ preventScroll: true });
-        msg.setSelectionRange(msg.value.length, msg.value.length);
+        target.focus({ preventScroll: true });
+        if (target === msg) msg.setSelectionRange(msg.value.length, msg.value.length);
       }, reduceMotion ? 0 : 500);
     });
   });
