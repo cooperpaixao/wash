@@ -36,7 +36,7 @@
   <link rel="preload" as="image" href="/assets/img/photos/car-in-soft-touch-brushes-800.webp" media="(max-width: 899px)" fetchpriority="high">
   <link rel="preload" as="image" href="/assets/img/photos/car-in-soft-touch-brushes.webp" media="(min-width: 900px)" fetchpriority="high">
   <script>document.documentElement.className += " js";</script>
-  <link rel="stylesheet" href="/assets/css/styles.css?v=403f6cc6">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=101f3029">
   <script src="/assets/js/main.js?v=aa44cef3" defer></script>
   <script type="application/ld+json">
 {
@@ -276,14 +276,18 @@
 </section>
 
 
-    <section class="section">
+    <section class="section is-paused">
       <div class="wrap">
         <div class="section-head section-head--split">
           <h2>Detailing packages</h2>
           <p class="section-lede">Every detail includes an exterior wash, towel dry and interior vacuum. Package 2 adds acid-cleaned rims, door jambs and floor mats, and Package 3 adds a full interior clean, spray wax and dressed tires.</p>
         </div>
 <!-- Detailing packages and prices from the Wash 66 price sheet. -->
-<div class="details">
+<div class="season-note" role="note">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20M3.3 7l17.4 10M20.7 7L3.3 17M9.5 3.5 12 5.5l2.5-2M9.5 20.5 12 18.5l2.5 2"/></svg>
+  <p><strong>Detailing is closed for the winter.</strong> We don&#x27;t offer detailing during the winter months, and it will be back in the spring. The wash and vacuums are open every day as usual.</p>
+</div>
+<div class="details" inert>
   <article class="detail">
     <h3 class="detail-name">Package 1</h3>
     <p class="detail-price"><strong>$60</strong> plus HST</p>
@@ -353,7 +357,7 @@
       </div>
     </section>
 
-    <section class="section" id="book">
+    <section class="section is-paused" id="book">
       <div class="wrap contact-grid">
         <div class="contact-head">
           <h2>Book a detail</h2>
@@ -363,7 +367,7 @@
   Sends to info@wash66.com through FormSubmit (formsubmit.co). The first message triggers a
   one-time activation email to info@wash66.com; click the link in it once. See README.
 -->
-<form class="contact-form" action="https://formsubmit.co/info@wash66.com" method="POST" data-contact-form>
+<form inert class="contact-form" action="https://formsubmit.co/info@wash66.com" method="POST" data-contact-form>
   <input type="hidden" name="_subject" value="Detailing booking request from wash66.com">
   <input type="hidden" name="_template" value="table">
   <input type="hidden" name="_captcha" value="false">
@@ -451,7 +455,7 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
       Directions
     </a>
-    <a class="action-primary" href="#book">Book</a>
+    <a class="action-primary" href="/packages/">Prices</a>
   </nav>
 </body>
 </html>

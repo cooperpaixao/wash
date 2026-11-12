@@ -1096,3 +1096,10 @@ html:has(.contact-form :is(input, textarea, select):focus) .action-bar { transfo
   .data-table td:nth-of-type(2)::before { content: "Monthly with HST"; content: "Monthly with HST" / ""; }
   .data-table td:nth-of-type(3)::before { content: "Pays off at"; content: "Pays off at" / ""; }
 }
+
+/* ---------- Seasonal pause (detailing in winter) ---------- */
+.season-note { display: flex; gap: 14px; align-items: flex-start; margin: 0 0 24px; padding: 16px 18px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--line); border-left: 4px solid var(--accent); color: var(--text-2); }
+.season-note svg { flex: none; width: 24px; height: 24px; margin-top: 2px; color: var(--accent); }
+.season-note p { margin: 0; }
+.season-note strong { color: var(--ink); }
+.is-paused [inert] { filter: grayscale(1); opacity: .5; user-select: none; }
