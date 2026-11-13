@@ -36,8 +36,9 @@
   <link rel="preload" as="image" href="/assets/img/photos/soft-touch-car-wash-tunnel-800.webp" media="(max-width: 899px)" fetchpriority="high">
   <link rel="preload" as="image" href="/assets/img/photos/soft-touch-car-wash-tunnel.webp" media="(min-width: 900px)" fetchpriority="high">
   <script>document.documentElement.className += " js";</script>
-  <link rel="stylesheet" href="/assets/css/styles.css?v=101f3029">
-  <script src="/assets/js/main.js?v=aa44cef3" defer></script>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=8dfdc12d">
+  <script src="/assets/js/main.js?v=6fd9780c" defer></script>
+  <script src="/assets/js/live.js?v=2cdb5a87" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -180,6 +181,7 @@
 </head>
 <body class="is-article">
   <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar" data-notices role="status" aria-label="Notices"></div>
 
   <header class="site-header" data-header>
     <div class="wrap header-inner">
@@ -238,9 +240,9 @@
           <table class="data-table" role="table">
             <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Wash</th><th scope="col" role="columnheader">Per wash</th><th scope="col" role="columnheader">Monthly with HST</th><th scope="col" role="columnheader">Pays off at</th></tr></thead>
             <tbody role="rowgroup">
-              <tr role="row"><th scope="row" role="rowheader">Good</th><td role="cell">$14.95</td><td role="cell">$41.40 <small>($36 + HST)</small></td><td role="cell">3 washes a month</td></tr>
-              <tr role="row"><th scope="row" role="rowheader">Better</th><td role="cell">$18.40</td><td role="cell">$44.85 <small>($39 + HST)</small></td><td role="cell">3 washes a month</td></tr>
-              <tr role="row"><th scope="row" role="rowheader">Best</th><td role="cell">$21.85</td><td role="cell">$50.60 <small>($44 + HST)</small></td><td role="cell">3 washes a month</td></tr>
+              <tr role="row"><th scope="row" role="rowheader">Good</th><td role="cell"><span data-price="good.single">$14.95</span></td><td role="cell"><span data-price="good.monthlyWithTax">$41.40</span> <small>(<span data-price="good.monthly">$36</span> + HST)</small></td><td role="cell" data-payback="good">3 washes a month</td></tr>
+              <tr role="row"><th scope="row" role="rowheader">Better</th><td role="cell"><span data-price="better.single">$18.40</span></td><td role="cell"><span data-price="better.monthlyWithTax">$44.85</span> <small>(<span data-price="better.monthly">$39</span> + HST)</small></td><td role="cell" data-payback="better">3 washes a month</td></tr>
+              <tr role="row"><th scope="row" role="rowheader">Best</th><td role="cell"><span data-price="best.single">$21.85</span></td><td role="cell"><span data-price="best.monthlyWithTax">$50.60</span> <small>(<span data-price="best.monthly">$44</span> + HST)</small></td><td role="cell" data-payback="best">3 washes a month</td></tr>
             </tbody>
           </table>
           <p>Every wash after that is free. The <a href="/packages/#membership">calculator on our packages page</a> works it out for any number of washes.</p>
@@ -269,7 +271,7 @@
           </ul>
 
           <h2>Ways to pay less</h2>
-          <p>Pay three months up front and save $23 to $25 over three separate months, or buy six months of Best and get the seventh free for $262. Both are plus HST and listed on the <a href="/packages/#deals">packages page</a>.</p>
+          <p>Pay three months up front and save <span data-price-min="good.prepay3Save,better.prepay3Save,best.prepay3Save">$23</span> to <span data-price-max="good.prepay3Save,better.prepay3Save,best.prepay3Save">$25</span> over three separate months, or buy six months of Best and get the seventh free for <span data-price="best.sixPlusOne">$262</span>. Both are plus HST and listed on the <a href="/packages/#deals">packages page</a>.</p>
           <p class="article-cta"><a class="btn btn-primary" href="/packages/">Compare memberships</a></p>
         </div>
       </div>
@@ -290,7 +292,7 @@
           <a href="tel:+15068477627">506-847-7627</a><br>
           <a href="mailto:info@wash66.com">info@wash66.com</a>
         </address>
-        <p class="footer-hours">Every day 8&nbsp;am to 7&nbsp;pm<br>Holidays 10&nbsp;am to 6&nbsp;pm<br>Closed Christmas Day</p>
+        <p class="footer-hours" data-hours-footer>Every day 8&nbsp;am to 7&nbsp;pm<br>Holidays 10&nbsp;am to 6&nbsp;pm<br>Closed Christmas Day</p>
       </div>
       <nav class="footer-col" aria-label="Footer">
         <p class="footer-head">Washes</p>

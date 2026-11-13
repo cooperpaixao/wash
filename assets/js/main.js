@@ -19,7 +19,10 @@
     menuBtn.setAttribute("aria-expanded", String(open));
     menu.hidden = !open;
     document.body.classList.toggle("menu-open", open);
-    document.querySelectorAll(".skip, main, .site-footer, [data-action-bar]").forEach(function (el) { el.inert = open; });
+    document.querySelectorAll(".skip, .notice-bar, main, .site-footer, [data-action-bar]").forEach(function (el) { el.inert = open; });
+    /* A notice bar above the header pushes the header down, so start the menu under it */
+    var notices = document.querySelector(".notice-bar");
+    menu.style.top = open && notices ? "calc(" + Math.max(0, Math.round(notices.getBoundingClientRect().bottom)) + "px + var(--header-h))" : "";
     if (!open && restoreFocus) menuBtn.focus({ preventScroll: true });
   }
   if (menuBtn && menu) {
@@ -118,7 +121,8 @@
   });
 
   /* Prices: single vs monthly.
-     data-single is the per-wash price with HST included; data-monthly is the membership price before HST. */
+     data-single is the per-wash price with HST included; data-monthly is the membership price before HST.
+     assets/js/live.js updates both attributes from the Hub feed, then calls window.W66.refreshPrices(). */
   var HST = 0.15; /* New Brunswick HST */
   var plan = "single";
   var amounts = document.querySelectorAll(".price-amt");
@@ -127,16 +131,24 @@
   var noteSingle = planNote ? planNote.innerHTML : "";
   var noteMonthly = "Memberships are one wash a day, every day, at your level, plus free vacuums every visit. Membership prices are plus HST. <a href=\"#membership\">See how the tag works.</a>";
   var perText = { single: "per wash<small>HST included</small>", monthly: "per month<small>plus HST</small>" };
+  var calcUpdate = null;
 
   function price(tier, which) {
     var el = document.querySelector('.price-amt[data-tier="' + tier + '"]');
     return el ? Number(el.getAttribute("data-" + which)) : 0;
   }
-  function priceHTML(n) {
+  /* Whole dollars big, cents small and raised: 14 and .95 */
+  function setAmount(el, n) {
     var cents = Math.round(n * 100);
     var whole = Math.floor(cents / 100);
     var rest = cents % 100;
-    return whole + (rest ? '<span class="price-cents">.' + (rest < 10 ? "0" : "") + rest + "</span>" : "");
+    el.textContent = String(whole);
+    if (rest) {
+      var small = document.createElement("span");
+      small.className = "price-cents";
+      small.textContent = "." + (rest < 10 ? "0" : "") + rest;
+      el.appendChild(small);
+    }
   }
 
   document.querySelectorAll("[data-plan]").forEach(function (btn) {
@@ -146,7 +158,7 @@
         b.setAttribute("aria-pressed", String(b === btn));
       });
       amounts.forEach(function (a) {
-        a.innerHTML = priceHTML(Number(a.getAttribute("data-" + plan)));
+        setAmount(a, Number(a.getAttribute("data-" + plan)));
         var wrap = a.parentElement;
         wrap.classList.remove("is-swapping");
         void wrap.offsetWidth;
@@ -212,8 +224,17 @@
       });
     });
     rangeEl.addEventListener("input", update);
+    calcUpdate = update;
     update();
   }
+
+  /* live.js calls this after it changes data-single / data-monthly (or the tax rate) from the Hub feed */
+  window.W66 = window.W66 || {};
+  window.W66.refreshPrices = function (opts) {
+    if (opts && typeof opts.taxRate === "number" && isFinite(opts.taxRate) && opts.taxRate >= 0 && opts.taxRate <= 30) HST = opts.taxRate / 100;
+    amounts.forEach(function (a) { setAmount(a, Number(a.getAttribute("data-" + plan))); });
+    if (calcUpdate) calcUpdate();
+  };
 
   /* Detailing buttons prefill the booking form (same page, or via ?package= on /detailing/) */
   var msg = document.getElementById("cf-msg");
@@ -297,30 +318,7 @@
     });
   }
 
-  /* Open / closed right now, in Atlantic time */
-  var status = document.querySelector("[data-open-status]");
-  if (status && window.Intl && Intl.DateTimeFormat) {
-    try {
-      var parts = new Intl.DateTimeFormat("en-CA", {
-        timeZone: "America/Moncton", hour: "numeric", minute: "numeric", hour12: false
-      }).formatToParts(new Date());
-      var h = 0, m = 0;
-      parts.forEach(function (p) {
-        if (p.type === "hour") h = Number(p.value) % 24;
-        if (p.type === "minute") m = Number(p.value);
-      });
-      var mins = h * 60 + m;
-      var open = 8 * 60, close = 19 * 60;
-      var text = status.querySelector("[data-open-text]");
-      if (mins >= open && mins < close) {
-        status.classList.add("is-open");
-        text.textContent = "Open now until 7 pm";
-      } else {
-        status.classList.add("is-closed");
-        text.textContent = mins < open ? "Closed now. Opens at 8 am" : "Closed now. Opens tomorrow at 8 am";
-      }
-    } catch (err) { /* keep the static text */ }
-  }
+  /* The open / closed pill is written by assets/js/live.js (hours from the Hub feed, or the usual 8 am to 7 pm). */
 
   /* On phones, the hero facts and the before/after fade in as they scroll into view */
   var reveals = document.querySelectorAll("[data-reveal]");

@@ -36,8 +36,9 @@
   <link rel="preload" as="image" href="/assets/img/photos/soft-touch-car-wash-tunnel-800.webp" media="(max-width: 899px)" fetchpriority="high">
   <link rel="preload" as="image" href="/assets/img/photos/soft-touch-car-wash-tunnel.webp" media="(min-width: 900px)" fetchpriority="high">
   <script>document.documentElement.className += " js";</script>
-  <link rel="stylesheet" href="/assets/css/styles.css?v=101f3029">
-  <script src="/assets/js/main.js?v=aa44cef3" defer></script>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=8dfdc12d">
+  <script src="/assets/js/main.js?v=6fd9780c" defer></script>
+  <script src="/assets/js/live.js?v=2cdb5a87" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -155,6 +156,7 @@
 </head>
 <body class="">
   <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar" data-notices role="status" aria-label="Notices"></div>
 
   <header class="site-header" data-header>
     <div class="wrap header-inner">
@@ -239,12 +241,12 @@
           </article>
           <article class="card">
             <h2 class="card-title">Auto detailing</h2>
-            <p>Three detailing packages from $60 to $150, plus HST. Every detail starts with a wash, towel dry and interior vacuum, and Package 3 adds a full interior clean, spray wax and dressed tires.</p>
+            <p>Three detailing packages from <span data-price-min="detail.p1,detail.p2,detail.p3">$60</span> to <span data-price-max="detail.p1,detail.p2,detail.p3">$150</span>, plus HST. Every detail starts with a wash, towel dry and interior vacuum, and Package 3 adds a full interior clean, spray wax and dressed tires.</p>
             <a href="/detailing/">Detailing packages</a>
           </article>
           <article class="card">
             <h2 class="card-title">Covered vacuums</h2>
-            <p>Six vacuum bays under a roof, open year round. Free with any wash or membership, and $5 on their own. Members can vacuum once a day, even without washing.</p>
+            <p>Six vacuum bays under a roof, open year round. Free with any wash or membership, and <span data-price="vacuum">$5</span> on their own. Members can vacuum once a day, even without washing.</p>
             <a href="/faq/">Vacuum questions</a>
           </article>
         </div>
@@ -322,7 +324,7 @@
           <a href="tel:+15068477627">506-847-7627</a><br>
           <a href="mailto:info@wash66.com">info@wash66.com</a>
         </address>
-        <p class="footer-hours">Every day 8&nbsp;am to 7&nbsp;pm<br>Holidays 10&nbsp;am to 6&nbsp;pm<br>Closed Christmas Day</p>
+        <p class="footer-hours" data-hours-footer>Every day 8&nbsp;am to 7&nbsp;pm<br>Holidays 10&nbsp;am to 6&nbsp;pm<br>Closed Christmas Day</p>
       </div>
       <nav class="footer-col" aria-label="Footer">
         <p class="footer-head">Washes</p>

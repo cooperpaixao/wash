@@ -36,8 +36,9 @@
   <link rel="preload" as="image" href="/assets/img/photos/car-in-soft-touch-brushes-800.webp" media="(max-width: 899px)" fetchpriority="high">
   <link rel="preload" as="image" href="/assets/img/photos/car-in-soft-touch-brushes.webp" media="(min-width: 900px)" fetchpriority="high">
   <script>document.documentElement.className += " js";</script>
-  <link rel="stylesheet" href="/assets/css/styles.css?v=101f3029">
-  <script src="/assets/js/main.js?v=aa44cef3" defer></script>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=8dfdc12d">
+  <script src="/assets/js/main.js?v=6fd9780c" defer></script>
+  <script src="/assets/js/live.js?v=2cdb5a87" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -260,6 +261,7 @@
 </head>
 <body class="">
   <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar" data-notices role="status" aria-label="Notices"></div>
 
   <header class="site-header" data-header>
     <div class="wrap header-inner">
@@ -378,9 +380,9 @@
     <p class="promo-copy">Pay for three months of any membership at once and pay less than three separate months.</p>
     <table class="promo-table">
       <tbody>
-        <tr><th scope="row">Good</th><td>$85</td><td>save $23</td></tr>
-        <tr><th scope="row">Better</th><td>$94</td><td>save $23</td></tr>
-        <tr><th scope="row">Best</th><td>$107</td><td>save $25</td></tr>
+        <tr><th scope="row">Good</th><td><span data-price="good.prepay3">$85</span></td><td>save <span data-price="good.prepay3Save">$23</span></td></tr>
+        <tr><th scope="row">Better</th><td><span data-price="better.prepay3">$94</span></td><td>save <span data-price="better.prepay3Save">$23</span></td></tr>
+        <tr><th scope="row">Best</th><td><span data-price="best.prepay3">$107</span></td><td>save <span data-price="best.prepay3Save">$25</span></td></tr>
       </tbody>
     </table>
   </article>
@@ -389,7 +391,7 @@
     <p class="promo-copy">Seven months of the Best wash, paid once. Start in October and you're covered through April.</p>
     <table class="promo-table">
       <tbody>
-        <tr><th scope="row">Best</th><td>$262</td><td>for 7 months</td></tr>
+        <tr><th scope="row">Best</th><td><span data-price="best.sixPlusOne">$262</span></td><td>for 7 months</td></tr>
       </tbody>
     </table>
   </article>
@@ -539,7 +541,7 @@
 </details>
 <details>
   <summary>Do the vacuums cost extra?</summary>
-  <p>No, not with a wash. Vacuums are free with any wash and with every membership. If you only want to vacuum, it&#x27;s $5.</p>
+  <p>No, not with a wash. Vacuums are free with any wash and with every membership. If you only want to vacuum, it&#x27;s <span data-price="vacuum">$5</span>.</p>
 </details>
         </div>
       </div>
@@ -560,7 +562,7 @@
           <a href="tel:+15068477627">506-847-7627</a><br>
           <a href="mailto:info@wash66.com">info@wash66.com</a>
         </address>
-        <p class="footer-hours">Every day 8&nbsp;am to 7&nbsp;pm<br>Holidays 10&nbsp;am to 6&nbsp;pm<br>Closed Christmas Day</p>
+        <p class="footer-hours" data-hours-footer>Every day 8&nbsp;am to 7&nbsp;pm<br>Holidays 10&nbsp;am to 6&nbsp;pm<br>Closed Christmas Day</p>
       </div>
       <nav class="footer-col" aria-label="Footer">
         <p class="footer-head">Washes</p>

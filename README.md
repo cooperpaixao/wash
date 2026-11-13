@@ -78,10 +78,39 @@ Both were traced from the small logo PNG on the current site. To replace them wi
 ## Editing other things
 
 - **Link previews point at the Cloudflare preview address for now** (`wash66.cooper-577.workers.dev`), because wash66.com still shows the old site. When wash66.com switches to this site, run `python3 tools/set-share-domain.py https://wash66.com` so previews use the real domain again.
-- **After editing `assets/css/styles.css` or `assets/js/main.js`, or regenerating the link preview image**, run `python3 tools/stamp-assets.py`. It updates the `?v=` fingerprint on every page so visitors' browsers (and apps showing link previews) load the new file instead of a cached copy.
+- **After editing `assets/css/styles.css`, `assets/js/main.js` or `assets/js/live.js`, or regenerating the link preview image**, run `python3 tools/stamp-assets.py`. It updates the `?v=` fingerprint on every page so visitors' browsers (and apps showing link previews) load the new file instead of a cached copy.
 
-- **Hours** appear in three places: the Visit section in `index.html`, the JSON-LD block at the top of `index.html` (helps Google show your hours), and `assets/js/main.js` (the "Open now" badge, look for `8 * 60` and `19 * 60`).
+- **Hours** appear in three places: the Visit section in `index.html` (also `about/` and `contact/`), the JSON-LD block at the top of `index.html` (helps Google show your hours), and `assets/js/live.js` (the "Open now" badge, look for `fallbackStatus`; it is only used when the Hub feed is not available). When the feed is available, the Hub's hours replace the Visit and footer text, see "Live feed from the Hub" below. The JSON-LD hours stay static.
 - **Phone and email** are plain text in the HTML. Search and replace `506-847-7627`, `+15068477627` and `info@wash66.com`.
+
+## Live feed from the Hub
+
+The staff app (the Hub) can change hours, notices, prices, which sections show and a snow/rain effect without anyone editing this code. `assets/js/live.js` (loaded with `defer` on every page, after `main.js`) reads the feed in each visitor's browser and applies it. The feed contract (every field and what it means) is in the Hub project: `wash66-hub/docs/WEBSITE-FEED.md`.
+
+- **Feed address:** `https://hub.cooperpaixao.ca/api/public/website`, fixed in `live.js`.
+- **Testing:** on `localhost` or `127.0.0.1` only, `?hub=http://localhost:8868` (or any other web address) reads a different feed, for example `http://localhost:8872/?hub=http://localhost:8871`. Anywhere else the parameter is ignored, so nobody can make the real site show someone else's feed.
+- **If the Hub can't be reached:** the last feed (saved in the browser as `w66.feed`, up to 7 days old) is used; with nothing saved, the page stays exactly as written in the HTML. So the HTML is always the fallback: keep it correct.
+- **Timing:** the feed is fetched on load (5 second limit) and every 5 minutes while the tab is visible. Status and notices are re-checked every minute using Atlantic (Moncton) time.
+- **Safety:** feed text goes into the page with `textContent` only, numbers are checked before use, and unknown or broken parts of the feed are ignored.
+
+What the feed controls, and the hooks in the HTML:
+
+| What | Hook in the HTML |
+| --- | --- |
+| Open/closed pill on the home page | `data-open-status` with `data-open-text` inside. `live.js` is the only thing that writes it. |
+| Notices above the header | `<div class="notice-bar" data-notices role="status">` on every page (`live.js` fills it). Each notice has a close button that hides it for the browser session. Upcoming notices show as a calm "Heads up" row. |
+| Regular hours and the "Upcoming" list | `<dl class="hours" data-hours>` (home, about, contact). The footer lines use `data-hours-footer`. |
+| Prices in text | `<span data-price="good.single">$14.95</span>`. Keys are the feed's `prices` keys. Whole dollars show as `$36`, otherwise `$14.95`. For "from $60 to $150" style ranges use `data-price-min="detail.p1,detail.p2,detail.p3"` and `data-price-max="..."`. |
+| The big price numbers and the calculator | `.price-amt[data-tier][data-single][data-monthly]`. `live.js` updates both attributes, then calls `window.W66.refreshPrices()` (in `main.js`). |
+| "Pays off at N washes a month" (membership article) | `data-payback="good"` (or `better`, `best`), worked out like the calculator. |
+| Sections (home page) | `data-section="washes"`, `membership`, `results`, `winter`, `extras`, `detailing`, `reviews`, `giftCards`, `faq` on the `<section>` (the ids are the same as before; `giftCards` is `#gift-cards`). `paused` greys the section out, makes it inert and shows the note; `off` hides it and the links to it (CSS, see `data-sec-off` in `styles.css`). `on` removes any pause, including the one written into the HTML. |
+| Detailing page | `data-section="detailing"` on the packages block, the add-ons block (`data-section-only="off"`) and `#book` (`data-no-note`). `data-detailing-off-note` is the "isn't offered right now" box. `data-detailing-action` is the phone action bar's main button (Book when detailing is on, Prices otherwise). When detailing is `off` the Detailing menu and footer links are hidden. |
+| Pausing by hand | `class="is-paused"` on the section, a `.season-note` box, and `inert data-live-inert` on the blocks that should grey out. `data-pause-keep` keeps a block clickable while paused. |
+| Snow or rain over the home hero | Drawn on a `<canvas class="hero-fx">` that `live.js` adds between `.hero-overlay` and the content. Only on screens 900 px wide or more, and not for visitors who asked for reduced motion. It pauses when the hero is off screen or the tab is hidden. |
+
+Left static on purpose: JSON-LD (including prices and hours), `<meta>` tags, `llms.txt`, the FAQ answers, and the policy wording on `/disclaimers/`. If a price changes in the Hub, check those by hand.
+
+To try things locally, run a small server that returns a feed with CORS `*` on `/api/public/website`, serve the site with `npx http-server -p 8872 -c-1 .`, and open pages with `?hub=` pointing at it.
 
 ## Previewing locally
 

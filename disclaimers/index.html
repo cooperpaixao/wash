@@ -36,8 +36,9 @@
   <link rel="preload" as="image" href="/assets/img/photos/soft-touch-car-wash-tunnel-800.webp" media="(max-width: 899px)" fetchpriority="high">
   <link rel="preload" as="image" href="/assets/img/photos/soft-touch-car-wash-tunnel.webp" media="(min-width: 900px)" fetchpriority="high">
   <script>document.documentElement.className += " js";</script>
-  <link rel="stylesheet" href="/assets/css/styles.css?v=101f3029">
-  <script src="/assets/js/main.js?v=aa44cef3" defer></script>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=8dfdc12d">
+  <script src="/assets/js/main.js?v=6fd9780c" defer></script>
+  <script src="/assets/js/live.js?v=2cdb5a87" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -155,6 +156,7 @@
 </head>
 <body class="">
   <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar" data-notices role="status" aria-label="Notices"></div>
 
   <header class="site-header" data-header>
     <div class="wrap header-inner">
@@ -290,13 +292,13 @@
             <li>Sharp objects</li>
           </ul>
           <p>Please remove personal items from the vehicle or secure them in the glove compartment before detailing. Wash 66 is not responsible for personal items left in the vehicle during detailing, and items left in the vehicle may be treated as garbage and cleaned out.</p>
-          <p>Please remove all garbage from the cabin and trunk before your detail. If garbage remains, a removal fee of $20 to $40 applies, depending on the amount and the time it takes.</p>
+          <p>Please remove all garbage from the cabin and trunk before your detail. If garbage remains, a removal fee of <span data-price="detail.garbageMin">$20</span> to <span data-price="detail.garbageMax">$40</span> applies, depending on the amount and the time it takes.</p>
           <p>Detailing depends on staff availability, so we recommend booking ahead to make sure we can fit in the services you want.</p>
         </section>
 
         <section class="legal-card" id="vacuums">
           <h2>Vacuums</h2>
-          <p>Use of our vehicle interior vacuums is included with the purchase of a car wash. If you hold a monthly membership, you may vacuum your vehicle once per day, whether you use the wash that day or not. Without a wash or membership, vacuum use is $5.</p>
+          <p>Use of our vehicle interior vacuums is included with the purchase of a car wash. If you hold a monthly membership, you may vacuum your vehicle once per day, whether you use the wash that day or not. Without a wash or membership, vacuum use is <span data-price="vacuum">$5</span>.</p>
           <p>Vacuums are for cleaning vehicle cabin interiors only, and are for Wash 66 customers only. Please don't detail your vehicle in the vacuum bay, and if there is a line for the vacuums, be considerate of others waiting their turn.</p>
           <p><strong>Lost items:</strong> it is your responsibility not to vacuum up anything important, so please check your vehicle for valuables before you start. Each vacuum has a trap near the top that catches some items, and an attendant can check it for you. For safety, staff cannot open the vacuum canisters or reach inside them. Wash 66 is not responsible for items lost in the vacuums.</p>
         </section>
@@ -363,7 +365,7 @@
           <a href="tel:+15068477627">506-847-7627</a><br>
           <a href="mailto:info@wash66.com">info@wash66.com</a>
         </address>
-        <p class="footer-hours">Every day 8&nbsp;am to 7&nbsp;pm<br>Holidays 10&nbsp;am to 6&nbsp;pm<br>Closed Christmas Day</p>
+        <p class="footer-hours" data-hours-footer>Every day 8&nbsp;am to 7&nbsp;pm<br>Holidays 10&nbsp;am to 6&nbsp;pm<br>Closed Christmas Day</p>
       </div>
       <nav class="footer-col" aria-label="Footer">
         <p class="footer-head">Washes</p>
